@@ -1,0 +1,292 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://NENtinOS/ball 2d/Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://NENtinOS/ball 2d/Ball.gd" type="Script" id=2]
+[ext_resource path="res://NENtinOS/ball 2d/Ground.tscn" type="PackedScene" id=3]
+[ext_resource path="res://NENtinOS/ball 2d/Game.gd" type="Script" id=4]
+[ext_resource path="res://NENtinOS/ball 2d/Button.png" type="Texture" id=5]
+[ext_resource path="res://NENtinOS/NotoSans-Black.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Button
+
+func _pressed():
+	get_tree().change_scene(\"res://NENtinOS/Main.tscn\")
+
+"
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends CheckButton
+
+func _ready():
+	if get_tree().debug_collisions_hint == true:
+		pressed = true
+	else:
+		pressed = false
+	if !pressed:
+		$Label.hide()
+
+func _pressed(pressed=false):
+	if pressed:
+		get_tree().debug_collisions_hint = not get_tree().debug_collisions_hint
+		get_tree().reload_current_scene()
+	if !pressed:
+		get_tree().debug_collisions_hint = not get_tree().debug_collisions_hint
+		get_tree().reload_current_scene()
+"
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Label
+
+func _physics_process(_delta) -> void:
+	text = \"FPS: \" + str(Engine.get_frames_per_second())
+"
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Ball" parent="." instance=ExtResource( 1 )]
+position = Vector2( 464.525, 289.377 )
+gravity_scale = 4.0
+script = ExtResource( 2 )
+
+[node name="Ground" parent="." instance=ExtResource( 3 )]
+position = Vector2( 51.1513, 632.644 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 149.15, 632.644 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 245.367, 632.644 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 344.41, 632.644 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 443.452, 632.644 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 543.449, 632.644 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 642.983, 632.644 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 742.095, 632.644 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 842.048, 633.485 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 941.159, 633.485 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1040.38, 633.485 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1140.45, 633.485 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1240.52, 633.485 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1339.74, 633.485 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1439.81, 633.485 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1539.03, 633.485 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground17" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1638.26, 620.031 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground18" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1738.33, 608.258 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground19" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1838.39, 590.599 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground20" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1938.46, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground21" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2038.47, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground22" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2137.68, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground23" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2237.68, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground24" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2337.69, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground25" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2436.9, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground26" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2536.91, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground27" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2635.33, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground28" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2734.54, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground29" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2834.55, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground30" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2933.76, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground31" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3034.71, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground32" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3133.48, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground33" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3234.48, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground34" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3380.78, 449.928 )
+rotation = 0.811578
+scale = Vector2( 5, 5 )
+
+[node name="Ground35" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3522.36, 314.954 )
+rotation = 0.811578
+scale = Vector2( 5, 5 )
+
+[node name="Ground36" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3668.66, 176.204 )
+rotation = 0.811578
+scale = Vector2( 5, 5 )
+
+[node name="Ground37" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4097.18, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground38" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4199.12, 575.463 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground39" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4301.06, 616.993 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground40" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4401.11, 720.82 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground41" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4501.16, 720.82 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground42" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4601.21, 720.82 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground43" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4701.26, 720.82 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground44" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4801.31, 720.82 )
+scale = Vector2( 5, 5 )
+
+[node name="Ground45" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4901.36, 720.82 )
+scale = Vector2( 5, 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 464.525, 289.377 )
+current = true
+smoothing_speed = 20.0
+
+[node name="Button" type="Button" parent="Camera2D"]
+margin_left = -508.0
+margin_top = -296.0
+margin_right = -464.0
+margin_bottom = -267.0
+custom_fonts/font = SubResource( 1 )
+text = "exit"
+script = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="Camera2D"]
+visible = false
+margin_left = 379.475
+margin_top = -288.377
+margin_right = 500.475
+margin_bottom = -248.377
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Debug"
+script = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Camera2D/CheckButton"]
+margin_left = -874.983
+margin_top = 5.66516
+margin_right = -834.983
+margin_bottom = 19.6652
+text = "FPS: "
+script = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Camera2D"]
+position = Vector2( -294.832, 292.99 )
+rotation = -3.14159
+scale = Vector2( 0.8, 0.5 )
+normal = ExtResource( 5 )
+action = "ui_left"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Camera2D"]
+position = Vector2( 301.552, 164.027 )
+scale = Vector2( 0.8, 0.5 )
+normal = ExtResource( 5 )
+action = "ui_right"

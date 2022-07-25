@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/RichaadEB Deja Vu.ogg-3314a7f94b88aeee2c2756b7df56a447.oggstr"
+
+[deps]
+
+source_file="res://NENtinOS/off road racing/RichaadEB Deja Vu.ogg"
+dest_files=[ "res://.import/RichaadEB Deja Vu.ogg-3314a7f94b88aeee2c2756b7df56a447.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

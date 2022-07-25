@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/4-steps-stairs.obj-19652e1e9a9c0d39ae91d53958f01aeb.mesh"
+
+[deps]
+
+files=[ "res://.import/4-steps-stairs.obj-19652e1e9a9c0d39ae91d53958f01aeb.mesh" ]
+
+source_file="res://4-step-stair/4-steps-stairs.obj"
+dest_files=[ "res://.import/4-steps-stairs.obj-19652e1e9a9c0d39ae91d53958f01aeb.mesh", "res://.import/4-steps-stairs.obj-19652e1e9a9c0d39ae91d53958f01aeb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

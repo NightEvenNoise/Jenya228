@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://RustVEH/carbody/Rusted Car.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://RustVEH/carbody/Car Uv.jpg" type="Texture" id=2]
+[ext_resource path="res://RustVEH/carbody/Rusted Car Seats.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://RustVEH/carbody/Rusted Car Seats Uv.jpg" type="Texture" id=4]
+[ext_resource path="res://RustVEH/wheel/tire.obj" type="ArrayMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 4.19236, 1.48428, 1.60128 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.262745, 0.254902, 0.254902, 1 )
+
+[node name="VehicleBody" type="VehicleBody"]
+
+[node name="Rusted Car" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 1.23465 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="Rusted Car Seats" type="MeshInstance" parent="Rusted Car"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.44855, 0, -14.2958 )
+mesh = ExtResource( 3 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.311008, 1.57084, -0.626127 )
+shape = SubResource( 3 )
+
+[node name="VehicleWheel" type="VehicleWheel" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.64869, 0.171, 0.690375 )
+use_as_traction = true
+use_as_steering = true
+suspension_stiffness = 40.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="tire" type="MeshInstance" parent="VehicleWheel"]
+transform = Transform( -0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, 0.0269163, -0.522927, 0.0715697 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 4 )
+
+[node name="VehicleWheel2" type="VehicleWheel" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.69319, 0.166719, -1.96905 )
+use_as_traction = true
+use_as_steering = true
+suspension_stiffness = 40.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="tire2" type="MeshInstance" parent="VehicleWheel2"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0266919, -0.519256, -0.0730028 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 4 )
+
+[node name="VehicleWheel4" type="VehicleWheel" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.832, 0.165, 0.69 )
+use_as_traction = true
+suspension_stiffness = 40.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="tire4" type="MeshInstance" parent="VehicleWheel4"]
+transform = Transform( -0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, 0.014793, -0.517994, 0.0733656 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 4 )
+
+[node name="VehicleWheel3" type="VehicleWheel" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.82, 0.168, -1.969 )
+use_as_traction = true
+suspension_stiffness = 40.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="tire3" type="MeshInstance" parent="VehicleWheel3"]
+transform = Transform( 0.5, 0, -2.66454e-15, 0, 0.5, 0, 2.66454e-15, 0, 0.5, -0.00835443, -0.520163, -0.0722443 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 4 )

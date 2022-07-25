@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/boloto.obj-4135c82850c77452c13270e326461c40.mesh"
+
+[deps]
+
+files=[ "res://.import/boloto.obj-4135c82850c77452c13270e326461c40.mesh" ]
+
+source_file="res://shrek/boloto.obj"
+dest_files=[ "res://.import/boloto.obj-4135c82850c77452c13270e326461c40.mesh", "res://.import/boloto.obj-4135c82850c77452c13270e326461c40.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

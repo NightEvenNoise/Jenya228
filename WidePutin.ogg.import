@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/WidePutin.ogg-568fd4f806dc7bd1226679c0c560af83.oggstr"
+
+[deps]
+
+source_file="res://WidePutin.ogg"
+dest_files=[ "res://.import/WidePutin.ogg-568fd4f806dc7bd1226679c0c560af83.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

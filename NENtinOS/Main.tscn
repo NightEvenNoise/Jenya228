@@ -1,0 +1,1030 @@
+[gd_scene load_steps=74 format=2]
+
+[ext_resource path="res://NENtinOS/off road racing/off road racing/car-full.png" type="Texture" id=1]
+[ext_resource path="res://NENtinOS/list_icon.png" type="Texture" id=2]
+[ext_resource path="res://NENtinOS/x_delete_remove_icon.png" type="Texture" id=3]
+[ext_resource path="res://NENtinOS/Main.gd" type="Script" id=4]
+[ext_resource path="res://NENtinOS/power_standby_icon.png" type="Texture" id=5]
+[ext_resource path="res://NENtinOS/NotoSans-Black.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://NENtinOS/folder_icon.png" type="Texture" id=7]
+[ext_resource path="res://NENtinOS/paintbrush_icon.png" type="Texture" id=8]
+[ext_resource path="res://NENtinOS/pong/icon.png" type="Texture" id=9]
+[ext_resource path="res://NENtinOS/NENtin_logo.png" type="Texture" id=10]
+[ext_resource path="res://NENtinOS/cyberflexmoto/icon.png" type="Texture" id=11]
+[ext_resource path="res://NENtinOS/console.png" type="Texture" id=12]
+[ext_resource path="res://NENtinOS/lyaguska.ogv" type="VideoStream" id=14]
+[ext_resource path="res://NENtinOS/EnterButton.png" type="Texture" id=15]
+[ext_resource path="res://NENtinOS/wallpapers/5372f6c761019ceec5c704.jpg" type="Texture" id=16]
+[ext_resource path="res://NENtinOS/wallpapers/6kpe66.jpg" type="Texture" id=17]
+[ext_resource path="res://NENtinOS/wallpapers/2776349bb0e4735e.jpg" type="Texture" id=18]
+[ext_resource path="res://NENtinOS/wallpapers/3121242112131113144.jpg" type="Texture" id=19]
+[ext_resource path="res://NENtinOS/iconGoogle.png" type="Texture" id=20]
+[ext_resource path="res://NENtinOS/Google.gd" type="Script" id=21]
+[ext_resource path="res://NENtinOS/ball 2d/Ball.png" type="Texture" id=23]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends Position2D
+
+func _process(_delta) -> void:
+	if $paint.is_hovered() && Input.is_action_pressed(\"mmb\"):
+		position = get_global_mouse_position()
+"
+
+[sub_resource type="DynamicFont" id=11]
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="GDScript" id=12]
+script/source = "extends Position2D
+
+func _process(_delta) -> void:
+	if $Ball2D_b.is_hovered() && Input.is_action_pressed(\"mmb\"):
+		position = get_global_mouse_position()
+"
+
+[sub_resource type="DynamicFont" id=17]
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.0980392, 0.572549, 0.596078, 1 )
+
+[sub_resource type="GDScript" id=19]
+script/source = "extends Button
+
+func _pressed():
+	get_tree().change_scene(\"res://Televizr.tscn\")
+"
+
+[sub_resource type="DynamicFont" id=20]
+size = 14
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 14
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="GDScript" id=22]
+script/source = "extends WindowDialog
+
+var color
+
+func _process(_delta) -> void:
+	if Input.is_action_pressed(\"lmb\") && visible:
+		if get_viewport().get_mouse_position() > $position_2d.position && get_viewport().get_mouse_position() < $position_2d2.position:
+				$PaintBrush.add_point(get_local_mouse_position())
+	color = $ColorPicker.color
+	$PaintBrush.default_color = color
+	if $ClearAll.pressed || !visible:
+		$PaintBrush.clear_points()
+"
+
+[sub_resource type="DynamicFont" id=23]
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=24]
+default_font = SubResource( 23 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 20
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="GDScript" id=27]
+script/source = "extends Position2D
+
+func _process(_delta) -> void:
+	if Input.is_action_pressed(\"rmb\"):
+		show()
+		position = get_global_mouse_position()
+	if Input.is_action_pressed(\"lmb\") && !$Panel/create.pressed:
+		hide()
+	if $Panel/create.is_hovered() || $Panel2/MST.is_hovered() || $Panel2/TDocument.is_hovered():
+		$Panel2.show()
+	elif !$Panel/create.is_hovered() || !$Panel2/MST.is_hovered() || !$Panel2/TDocument.is_hovered():
+		$Panel2.hide()
+"
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 15
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=30]
+size = 15
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 15
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=33]
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="GDScript" id=34]
+script/source = "extends WindowDialog
+
+func _process(_delta) -> void:
+	if visible:
+		if Input.is_action_just_pressed(\"enter\") || $LineEdit/EnterButton.pressed:
+			if $LineEdit.text != \"\":
+				$TextEdit.text += \"Jenya\" + ': ' + $LineEdit.text + '\\n'
+				$LineEdit.text = ''
+"
+
+[sub_resource type="DynamicFont" id=35]
+size = 20
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 28
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=37]
+size = 25
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=38]
+
+[sub_resource type="DynamicFont" id=39]
+size = 20
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="GDScript" id=40]
+script/source = "extends Label
+
+func _process(_delta) -> void:
+	if TranslationServer.get_locale() == \"en\":
+		text = \"Time\\n\" + str(OS.get_time().values())
+	if TranslationServer.get_locale() == \"ru\":
+		text = \"Время\\n\" + str(OS.get_time().values())
+"
+
+[sub_resource type="DynamicFont" id=42]
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=41]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=43]
+size = 17
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=44]
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=45]
+default_font = SubResource( 44 )
+
+[sub_resource type="GDScript" id=46]
+script/source = "extends FileDialog
+
+func _ready():
+	window_title = \"Explorer\"
+"
+
+[sub_resource type="DynamicFont" id=47]
+size = 25
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=48]
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=49]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="CubeMesh" id=50]
+
+[sub_resource type="SpatialMaterial" id=51]
+albedo_texture = ExtResource( 10 )
+uv1_triplanar = true
+
+[sub_resource type="GDScript" id=52]
+script/source = "extends MeshInstance
+
+func _physics_process(_delta) -> void:
+	rotation = Vector3(randi(),randi(),randi())
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.137255, 0.156863, 0.447059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureBG" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="TextureBG"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="TextureBG"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 19 )
+expand = true
+
+[node name="TextureRect3" type="TextureRect" parent="TextureBG"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 18 )
+expand = true
+
+[node name="TextureRect4" type="TextureRect" parent="TextureBG"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="Custom theme" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -200.0
+margin_right = 300.0
+margin_bottom = 200.0
+custom_fonts/title_font = SubResource( 1 )
+window_title = "custom theme"
+resizable = true
+
+[node name="ColorBackgroundButton" type="ColorPickerButton" parent="Custom theme"]
+margin_right = 60.0
+margin_bottom = 40.0
+theme = SubResource( 3 )
+color = Color( 0.137255, 0.156863, 0.447059, 1 )
+edit_alpha = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Custom theme"]
+margin_left = 80.0
+margin_top = 5.0
+margin_right = 260.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 4 )
+text = "background color"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CstomImgButton" type="Button" parent="Custom theme"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 5 )
+text = "custom image"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="Custom theme"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -125.0
+margin_right = 250.0
+margin_bottom = 125.0
+window_title = "Открыть файл"
+resizable = true
+mode = 0
+access = 2
+filters = PoolStringArray( "*.png", "*.jpg" )
+
+[node name="Position_paint" type="Position2D" parent="."]
+script = SubResource( 6 )
+
+[node name="paint" type="Button" parent="Position_paint"]
+margin_right = 60.0
+margin_bottom = 60.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 8 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PaintEdit" type="TextEdit" parent="Position_paint/paint"]
+margin_left = 6.0
+margin_top = 60.0
+margin_right = 80.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 11 )
+custom_styles/read_only = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+custom_styles/completion = SubResource( 10 )
+text = "paint"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Position_Ball2D" type="Position2D" parent="."]
+position = Vector2( 0, 120 )
+script = SubResource( 12 )
+
+[node name="Ball2D_b" type="Button" parent="Position_Ball2D"]
+margin_right = 64.0
+margin_bottom = 64.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 23 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Position_Ball2D/Ball2D_b"]
+margin_left = 6.0
+margin_top = 60.0
+margin_right = 80.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 17 )
+custom_styles/read_only = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+custom_styles/completion = SubResource( 16 )
+text = "Ball 2D"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Position_OffRoadRacing" type="Position2D" parent="."]
+position = Vector2( 0, 240 )
+
+[node name="OffRoadRacing_b" type="Button" parent="Position_OffRoadRacing"]
+margin_right = 64.0
+margin_bottom = 64.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 1 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Position_OffRoadRacing/OffRoadRacing_b"]
+margin_left = 6.0
+margin_top = 60.0
+margin_right = 96.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 17 )
+custom_styles/read_only = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+custom_styles/completion = SubResource( 16 )
+text = "ORR Car"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Position_pong" type="Position2D" parent="."]
+position = Vector2( 100.409, 12.3117 )
+
+[node name="pong_b" type="Button" parent="Position_pong"]
+margin_right = 64.0
+margin_bottom = 64.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 9 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Position_pong/pong_b"]
+margin_left = 6.0
+margin_top = 60.0
+margin_right = 96.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 17 )
+custom_styles/read_only = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+custom_styles/completion = SubResource( 16 )
+text = "pong"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Position_cfmg" type="Position2D" parent="."]
+position = Vector2( 100.409, 120 )
+
+[node name="cfmg" type="Button" parent="Position_cfmg"]
+margin_right = 64.0
+margin_bottom = 64.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Position_cfmg/cfmg"]
+margin_left = 6.0
+margin_top = 60.0
+margin_right = 96.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 17 )
+custom_styles/read_only = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+custom_styles/completion = SubResource( 16 )
+text = "cfmg"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Panel" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -320.0
+margin_right = 200.0
+margin_bottom = -58.0
+custom_styles/panel = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Menu"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 50.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 5 )
+flat = true
+expand_icon = true
+script = SubResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="customa thema" type="Button" parent="Menu"]
+margin_right = 101.0
+margin_bottom = 23.0
+focus_mode = 0
+custom_fonts/font = SubResource( 20 )
+enabled_focus_mode = 0
+text = "custom theme"
+flat = true
+
+[node name="settings" type="Button" parent="Menu"]
+margin_top = 30.0
+margin_right = 70.0
+margin_bottom = 56.0
+focus_mode = 0
+custom_fonts/font = SubResource( 21 )
+enabled_focus_mode = 0
+text = "settings"
+flat = true
+
+[node name="Paint" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -200.0
+margin_right = 300.0
+margin_bottom = 200.0
+window_title = "Paint"
+resizable = true
+script = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PaintBrush" type="Line2D" parent="Paint"]
+default_color = Color( 0.4, 0.501961, 1, 1 )
+
+[node name="ColorPicker" type="ColorPickerButton" parent="Paint"]
+margin_right = 40.0
+margin_bottom = 35.0
+theme = SubResource( 24 )
+color = Color( 0.4, 0.501961, 1, 1 )
+edit_alpha = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Paint"]
+margin_left = 50.0
+margin_right = 92.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 25 )
+text = "color"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClearAll" type="Button" parent="Paint"]
+margin_left = 130.0
+margin_right = 221.0
+margin_bottom = 34.0
+focus_mode = 0
+custom_fonts/font = SubResource( 26 )
+enabled_focus_mode = 0
+text = "clear all"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position_2d" type="Position2D" parent="Paint"]
+position = Vector2( 212, 0 )
+
+[node name="position_2d2" type="Position2D" parent="Paint"]
+position = Vector2( 812, 0 )
+
+[node name="Position2D" type="Position2D" parent="."]
+visible = false
+script = SubResource( 27 )
+
+[node name="Panel" type="Panel" parent="Position2D"]
+margin_right = 140.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="custom theme" type="Button" parent="Position2D/Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -28.0
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 29 )
+enabled_focus_mode = 0
+text = "custom theme"
+flat = true
+
+[node name="create" type="Button" parent="Position2D/Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_bottom = -22.0
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 30 )
+enabled_focus_mode = 0
+text = "create"
+flat = true
+
+[node name="Panel2" type="Panel" parent="Position2D"]
+visible = false
+margin_left = 140.0
+margin_right = 280.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MST" type="Button" parent="Position2D/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TDocument" type="Button" parent="Position2D/Panel2"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -28.0
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 32 )
+enabled_focus_mode = 0
+text = "text document"
+flat = true
+
+[node name="Console" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -200.0
+margin_right = 300.0
+margin_bottom = 200.0
+custom_fonts/title_font = SubResource( 33 )
+window_title = "Console"
+resizable = true
+script = SubResource( 34 )
+
+[node name="TextEdit" type="TextEdit" parent="Console"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 35 )
+readonly = true
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+highlight_all_occurrences = true
+override_selected_font_color = true
+virtual_keyboard_enabled = false
+smooth_scrolling = true
+
+[node name="LineEdit" type="LineEdit" parent="Console"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -49.0
+custom_fonts/font = SubResource( 36 )
+clear_button_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnterButton" type="TextureButton" parent="Console/LineEdit"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -49.0
+margin_right = -31.0
+texture_normal = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Custom image" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -200.0
+margin_right = 300.0
+margin_bottom = 200.0
+window_title = "Custom image"
+
+[node name="Button" type="Button" parent="Custom image"]
+margin_right = 213.0
+margin_bottom = 122.0
+icon = ExtResource( 16 )
+expand_icon = true
+
+[node name="Button2" type="Button" parent="Custom image"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -213.0
+margin_bottom = 122.0
+icon = ExtResource( 19 )
+expand_icon = true
+
+[node name="Button3" type="Button" parent="Custom image"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -61.0
+margin_right = 213.0
+margin_bottom = 61.0
+icon = ExtResource( 18 )
+expand_icon = true
+
+[node name="Button4" type="Button" parent="Custom image"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -213.0
+margin_top = -61.0
+margin_bottom = 61.0
+icon = ExtResource( 17 )
+expand_icon = true
+
+[node name="clear" type="Button" parent="Custom image"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -83.0
+margin_top = -41.0
+margin_right = 83.0
+custom_fonts/font = SubResource( 37 )
+text = "Clear"
+
+[node name="Panel" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -58.0
+custom_styles/panel = SubResource( 38 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="TextureButton" parent="Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -60.0
+margin_right = 60.0
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FolderButton" type="Button" parent="Panel"]
+margin_left = 80.0
+margin_right = 140.0
+margin_bottom = 60.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 7 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConsoleButton" type="TextureButton" parent="Panel"]
+margin_left = 150.0
+margin_right = 210.0
+margin_bottom = 60.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -131.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 39 )
+align = 1
+valign = 1
+script = SubResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoogleButton" type="TextureButton" parent="Panel"]
+margin_left = 230.0
+margin_right = 290.0
+margin_bottom = 60.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 20 )
+expand = true
+
+[node name="Google" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -200.0
+margin_right = 300.0
+margin_bottom = 200.0
+window_title = "Google"
+resizable = true
+script = ExtResource( 21 )
+
+[node name="ColorRect" type="ColorRect" parent="Google"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.815686, 0.92549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="Google"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -15.0
+margin_right = 200.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 42 )
+custom_styles/normal = SubResource( 41 )
+clear_button_enabled = true
+placeholder_text = "Search..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Google"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -15.5
+margin_bottom = 15.5
+custom_fonts/font = SubResource( 43 )
+text = "Search"
+
+[node name="Explorer" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -150.0
+margin_right = 300.0
+margin_bottom = 150.0
+theme = SubResource( 45 )
+window_title = "Открыть файл"
+resizable = true
+dialog_hide_on_ok = true
+dialog_autowrap = true
+mode = 0
+access = 1
+show_hidden_files = true
+script = SubResource( 46 )
+
+[node name="jjeye" type="VideoPlayer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 14 )
+volume_db = 24.0
+
+[node name="Timer" type="Timer" parent="jjeye"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Pssword" type="LineEdit" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -25.0
+margin_right = 250.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 47 )
+secret = true
+placeholder_text = "enter your password"
+
+[node name="Button" type="Button" parent="Pssword"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -78.0
+custom_fonts/font = SubResource( 48 )
+text = "confirm"
+
+[node name="StartProgram" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StartProgram"]
+anims/Start = SubResource( 49 )
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="Spatial"]
+current = true
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.96177 )
+mesh = SubResource( 50 )
+material/0 = SubResource( 51 )
+script = SubResource( 52 )
+
+[connection signal="pressed" from="Position2D/Panel/custom theme" to="." method="_on_custom_theme_pressed"]
+[connection signal="toggled" from="Panel/MenuButton" to="." method="_on_MenuButton_toggled"]

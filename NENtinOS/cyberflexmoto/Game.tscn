@@ -1,0 +1,108 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://NENtinOS/cyberflexmoto/Bike.tscn" type="PackedScene" id=1]
+[ext_resource path="res://NENtinOS/cyberflexmoto/Bike.gd" type="Script" id=2]
+[ext_resource path="res://NENtinOS/cyberflexmoto/Ground.tscn" type="PackedScene" id=3]
+[ext_resource path="res://NENtinOS/cyberflexmoto/Game.gd" type="Script" id=4]
+[ext_resource path="res://NENtinOS/cyberflexmoto/assets/part_immeubles-bg.png" type="Texture" id=5]
+[ext_resource path="res://NENtinOS/cyberflexmoto/assets/Buttons/flatDark02.png" type="Texture" id=6]
+[ext_resource path="res://NENtinOS/cyberflexmoto/assets/Buttons/flatDark01.png" type="Texture" id=7]
+[ext_resource path="res://NENtinOS/cyberflexmoto/assets/Buttons/flatDark04.png" type="Texture" id=8]
+[ext_resource path="res://NENtinOS/cyberflexmoto/assets/Buttons/flatDark03.png" type="Texture" id=9]
+
+[sub_resource type="TileSet" id=1]
+
+[node name="Game" type="Node"]
+script = ExtResource( 4 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Node2D"]
+scroll_limit_end = Vector2( 1024, 670 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="Node2D/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 512.277, 335.031 )
+texture = ExtResource( 5 )
+
+[node name="Ground" parent="Node2D" instance=ExtResource( 3 )]
+position = Vector2( 442.492, 549.329 )
+scale = Vector2( 2, 2 )
+
+[node name="Ground2" parent="Node2D" instance=ExtResource( 3 )]
+position = Vector2( 1360.86, 541.32 )
+scale = Vector2( 2, 2 )
+
+[node name="Ground3" parent="Node2D" instance=ExtResource( 3 )]
+position = Vector2( 2458.1, 658.786 )
+scale = Vector2( 2, 2 )
+
+[node name="Ground4" parent="Node2D" instance=ExtResource( 3 )]
+position = Vector2( 3579.37, 650.777 )
+scale = Vector2( 2, 2 )
+
+[node name="TileMap" type="TileMap" parent="Node2D"]
+tile_set = SubResource( 1 )
+format = 1
+
+[node name="Bike" parent="Node2D" instance=ExtResource( 1 )]
+position = Vector2( 433.997, 322.955 )
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/Bike"]
+rotating = true
+current = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+
+[node name="Control" type="Control" parent="Node2D/Bike/Camera2D"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left" type="Control" parent="Node2D/Bike/Camera2D/Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Node2D/Bike/Camera2D/Control/left"]
+position = Vector2( 24.3676, -57.2109 )
+normal = ExtResource( 7 )
+action = "ui_left"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Node2D/Bike/Camera2D/Control/left"]
+position = Vector2( 131.373, -57.211 )
+normal = ExtResource( 6 )
+action = "ui_right"
+
+[node name="right" type="Control" parent="Node2D/Bike/Camera2D/Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Node2D/Bike/Camera2D/Control/right"]
+position = Vector2( -70, -57.211 )
+normal = ExtResource( 9 )
+action = "ui_up"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Node2D/Bike/Camera2D/Control/right"]
+position = Vector2( -181.295, -57.211 )
+normal = ExtResource( 8 )
+action = "ui_down"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Hull.obj-f13741a06bca0b05a71cc8b3131d2655.mesh"
+
+[deps]
+
+files=[ "res://.import/Hull.obj-f13741a06bca0b05a71cc8b3131d2655.mesh" ]
+
+source_file="res://T-80/Hull.obj"
+dest_files=[ "res://.import/Hull.obj-f13741a06bca0b05a71cc8b3131d2655.mesh", "res://.import/Hull.obj-f13741a06bca0b05a71cc8b3131d2655.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

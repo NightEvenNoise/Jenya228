@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Chassis.obj-396682b5029b6e7bd0f85d4c1d4cdf02.mesh"
+
+[deps]
+
+files=[ "res://.import/Chassis.obj-396682b5029b6e7bd0f85d4c1d4cdf02.mesh" ]
+
+source_file="res://T-80/Chassis.obj"
+dest_files=[ "res://.import/Chassis.obj-396682b5029b6e7bd0f85d4c1d4cdf02.mesh", "res://.import/Chassis.obj-396682b5029b6e7bd0f85d4c1d4cdf02.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

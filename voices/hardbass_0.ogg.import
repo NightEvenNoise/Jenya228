@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hardbass_0.ogg-015012819cc636f8d1edbc4f1267a8a6.oggstr"
+
+[deps]
+
+source_file="res://voices/hardbass_0.ogg"
+dest_files=[ "res://.import/hardbass_0.ogg-015012819cc636f8d1edbc4f1267a8a6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lewd City Girls Cover.ogg-7dd7510f20985e72160aeac6717a6fa6.oggstr"
+
+[deps]
+
+source_file="res://NENtinOS/perfectgirlcity/Lewd City Girls Cover.ogg"
+dest_files=[ "res://.import/Lewd City Girls Cover.ogg-7dd7510f20985e72160aeac6717a6fa6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

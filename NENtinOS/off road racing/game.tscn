@@ -1,0 +1,477 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://NENtinOS/off road racing/RigidVehicle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://NENtinOS/off road racing/ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://NENtinOS/off road racing/RigidVehicle.gd" type="Script" id=3]
+[ext_resource path="res://NENtinOS/off road racing/game.gd" type="Script" id=4]
+[ext_resource path="res://NENtinOS/ball 2d/Button.png" type="Texture" id=5]
+[ext_resource path="res://NENtinOS/NotoSans-Black.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://NENtinOS/off road racing/RichaadEB Deja Vu.ogg" type="AudioStream" id=7]
+[ext_resource path="res://jenya/Jenya.tscn" type="PackedScene" id=8]
+[ext_resource path="res://NENtinOS/off road racing/kloppenheim_02.jpg" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 100000, 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 6 )
+
+[sub_resource type="PanoramaSky" id=3]
+panorama = ExtResource( 9 )
+
+[sub_resource type="Environment" id=4]
+background_mode = 2
+background_sky = SubResource( 3 )
+background_sky_orientation = Basis( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1 )
+adjustment_enabled = true
+adjustment_brightness = 0.5
+
+[node name="Game" type="Node"]
+script = ExtResource( 4 )
+
+[node name="2D" type="Node2D" parent="."]
+
+[node name="fall" type="Area2D" parent="2D"]
+position = Vector2( 0, 10000 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2D/fall"]
+shape = SubResource( 1 )
+
+[node name="ground" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 294, 508.715 )
+
+[node name="ground2" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 890, 508.715 )
+
+[node name="ground3" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 1490, 508.715 )
+
+[node name="ground4" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 2090, 508.715 )
+
+[node name="ground5" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 2690, 508.715 )
+
+[node name="ground6" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 3292.19, 506.827 )
+
+[node name="ground7" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 3905.71, 459.633 )
+rotation = -0.13439
+
+[node name="ground8" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 4502.24, 376.573 )
+rotation = -0.13439
+
+[node name="ground9" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 5104.43, 208.563 )
+rotation = -0.404916
+
+[node name="ground10" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 5657.54, -29.2935 )
+rotation = -0.404916
+
+[node name="ground11" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 6210.65, -267.15 )
+rotation = -0.404916
+
+[node name="ground12" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 6761.87, -505.006 )
+rotation = -0.404916
+
+[node name="ground13" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 7313.1, -742.863 )
+rotation = -0.404916
+
+[node name="ground14" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 7864.32, -980.719 )
+rotation = -0.404916
+
+[node name="ground15" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 8409.88, -1258.22 )
+rotation = -0.523599
+
+[node name="ground16" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 8929.01, -1556.48 )
+rotation = -0.523599
+
+[node name="ground17" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 9450.03, -1858.52 )
+rotation = -0.523599
+
+[node name="ground18" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 9972.93, -2158.67 )
+rotation = -0.523599
+
+[node name="ground19" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 10492.1, -2456.94 )
+rotation = -0.523599
+
+[node name="ground20" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 11009.3, -2758.98 )
+rotation = -0.523599
+
+[node name="ground21" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 11522.8, -3085.56 )
+rotation = -0.610865
+
+[node name="ground22" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 12015.5, -3431.02 )
+rotation = -0.610865
+
+[node name="ground23" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 12508.2, -3776.48 )
+rotation = -0.610865
+
+[node name="ground24" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 13000.9, -4121.93 )
+rotation = -0.610865
+
+[node name="ground25" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 13491.7, -4463.62 )
+rotation = -0.610865
+
+[node name="ground26" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 13982.5, -4809.07 )
+rotation = -0.610865
+
+[node name="ground27" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 14475.2, -5154.53 )
+rotation = -0.610865
+
+[node name="ground28" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 14967.9, -5499.99 )
+rotation = -0.610865
+
+[node name="ground29" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 15460.6, -5843.56 )
+rotation = -0.610865
+
+[node name="ground30" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 15953.3, -6189.02 )
+rotation = -0.610865
+
+[node name="ground31" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 18558.3, -4782.14 )
+
+[node name="ground32" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 19162.4, -4782.14 )
+
+[node name="ground33" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 19761.7, -4782.14 )
+
+[node name="ground34" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 20365.9, -4782.14 )
+
+[node name="ground35" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 20970, -4782.14 )
+
+[node name="ground36" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 21569.3, -4782.14 )
+
+[node name="ground37" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 22168.7, -4782.14 )
+
+[node name="ground38" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 22772.8, -4782.14 )
+
+[node name="ground39" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 23372.2, -4782.14 )
+
+[node name="ground40" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 23971.5, -4782.14 )
+
+[node name="ground41" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 24429, -4614.53 )
+rotation = 0.698132
+
+[node name="ground42" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 24888.7, -4226.09 )
+rotation = 0.698132
+
+[node name="ground43" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 25348.4, -3841.23 )
+rotation = 0.698132
+
+[node name="ground44" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 25808.1, -3456.36 )
+rotation = 0.698132
+
+[node name="ground45" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 26264.3, -3078.62 )
+rotation = 0.698132
+
+[node name="ground46" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 26724, -2690.18 )
+rotation = 0.698132
+
+[node name="ground47" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 27187.2, -2305.32 )
+rotation = 0.698132
+
+[node name="ground48" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 27650.5, -1920.45 )
+rotation = 0.698132
+
+[node name="ground49" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 28113.8, -1535.58 )
+rotation = 0.698132
+
+[node name="ground50" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 28566.4, -1157.84 )
+rotation = 0.698132
+
+[node name="ground51" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 29024, -774.312 )
+rotation = 0.698132
+
+[node name="ground52" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 29483.8, -386.549 )
+rotation = 0.698132
+
+[node name="ground53" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 29943.7, -3.02307 )
+rotation = 0.698132
+
+[node name="ground54" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 30403.5, 382.622 )
+rotation = 0.698132
+
+[node name="ground55" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 30861.1, 766.147 )
+rotation = 0.698132
+
+[node name="ground56" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 31318.8, 1149.67 )
+rotation = 0.698132
+
+[node name="ground57" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 31778.6, 1535.32 )
+rotation = 0.698132
+
+[node name="ground58" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 32238.5, 1918.84 )
+rotation = 0.698132
+
+[node name="ground59" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 32696.1, 2302.37 )
+rotation = 0.698132
+
+[node name="ground60" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 33153.8, 2683.78 )
+rotation = 0.698132
+
+[node name="ground61" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 33609.4, 3063.06 )
+rotation = 0.698132
+
+[node name="ground62" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 34071.3, 3446.59 )
+rotation = 0.698132
+
+[node name="ground63" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 34529, 3832.23 )
+rotation = 0.698132
+
+[node name="ground64" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 34990.9, 4220 )
+rotation = 0.698132
+
+[node name="ground65" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 35448.6, 4603.52 )
+rotation = 0.698132
+
+[node name="ground66" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 35908.4, 4989.17 )
+rotation = 0.698132
+
+[node name="ground67" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 36370.4, 5374.81 )
+rotation = 0.698132
+
+[node name="ground68" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 36832.3, 5760.46 )
+rotation = 0.698132
+
+[node name="ground69" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 37292.1, 6143.98 )
+rotation = 0.698132
+
+[node name="ground70" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 37749.8, 6529.63 )
+rotation = 0.698132
+
+[node name="ground71" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 38207.5, 6913.16 )
+rotation = 0.698132
+
+[node name="ground72" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 38667.3, 7298.8 )
+rotation = 0.698132
+
+[node name="ground73" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 39127.1, 7682.33 )
+rotation = 0.698132
+
+[node name="ground74" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 39589, 8065.85 )
+rotation = 0.698132
+
+[node name="ground75" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 40051, 8451.5 )
+rotation = 0.698132
+
+[node name="ground76" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 40512.9, 8837.14 )
+rotation = 0.698132
+
+[node name="ground77" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 40972.7, 9220.67 )
+rotation = 0.698132
+
+[node name="ground78" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 41434.6, 9602.07 )
+rotation = 0.698132
+
+[node name="ground79" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 41879.6, 9777.94 )
+
+[node name="ground80" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 42477.1, 9777.94 )
+
+[node name="ground81" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 43076.8, 9777.94 )
+
+[node name="ground82" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 43600.1, 9652.93 )
+rotation = -0.523599
+
+[node name="ground83" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 44121.4, 9349.92 )
+rotation = -0.523599
+
+[node name="ground84" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 44640.5, 9049.03 )
+rotation = -0.523599
+
+[node name="ground85" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 45153.3, 8752.38 )
+rotation = -0.523599
+
+[node name="ground86" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 45672.5, 8451.49 )
+rotation = -0.523599
+
+[node name="ground87" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 46193.7, 8152.72 )
+rotation = -0.523599
+
+[node name="ground88" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 46715, 7853.96 )
+rotation = -0.523599
+
+[node name="ground89" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 47232, 7555.19 )
+rotation = -0.523599
+
+[node name="ground90" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 47753.2, 7256.42 )
+rotation = -0.523599
+
+[node name="ground91" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 48274.5, 6955.53 )
+rotation = -0.523599
+
+[node name="ground92" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 48795.8, 6658.88 )
+rotation = -0.523599
+
+[node name="ground93" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 49317, 6360.11 )
+rotation = -0.523599
+
+[node name="ground94" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 49838.3, 6059.23 )
+rotation = -0.523599
+
+[node name="ground95" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 50355.3, 5762.58 )
+rotation = -0.523599
+
+[node name="ground96" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 50876.5, 5463.81 )
+rotation = -0.523599
+
+[node name="ground97" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 51391.4, 5169.28 )
+rotation = -0.523599
+
+[node name="ground98" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 51904.2, 4872.63 )
+rotation = -0.523599
+
+[node name="ground99" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 52423.4, 4575.98 )
+rotation = -0.523599
+
+[node name="ground100" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 52938.3, 4277.21 )
+rotation = -0.523599
+
+[node name="ground101" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 53458.7, 3977.4 )
+rotation = -0.523599
+
+[node name="ground102" parent="2D" instance=ExtResource( 2 )]
+position = Vector2( 53980.6, 3677.58 )
+rotation = -0.523599
+
+[node name="RigidVehicle" parent="2D" instance=ExtResource( 1 )]
+position = Vector2( 546, 124 )
+mass = 3.0
+gravity_scale = 5.0
+script = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="2D"]
+position = Vector2( 546, 124 )
+rotation = 0.015708
+current = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="2D"]
+position = Vector2( 785.339, 235.084 )
+rotation = 0.015708
+scale = Vector2( 1, 0.630409 )
+normal = ExtResource( 5 )
+action = "ui_up"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="2D"]
+position = Vector2( 306.787, 405.172 )
+rotation = -3.12588
+scale = Vector2( 1, 0.630409 )
+normal = ExtResource( 5 )
+action = "ui_down"
+
+[node name="Button" type="Button" parent="2D"]
+margin_right = 86.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 2 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )
+
+[node name="Camera" type="Camera" parent="."]
+current = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="Jenya" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.450286, 0.260929, -3.40932 )
+
+[connection signal="body_entered" from="2D/fall" to="." method="_on_fall_body_entered"]

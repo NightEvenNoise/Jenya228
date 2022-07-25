@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/16695_36x96_6_Panel_Door-White_V1.obj-019fc7caea468fc90379aa339d013ccd.mesh"
+
+[deps]
+
+files=[ "res://.import/16695_36x96_6_Panel_Door-White_V1.obj-019fc7caea468fc90379aa339d013ccd.mesh" ]
+
+source_file="res://door/16695_36x96_6_Panel_Door-White_V1.obj"
+dest_files=[ "res://.import/16695_36x96_6_Panel_Door-White_V1.obj-019fc7caea468fc90379aa339d013ccd.mesh", "res://.import/16695_36x96_6_Panel_Door-White_V1.obj-019fc7caea468fc90379aa339d013ccd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

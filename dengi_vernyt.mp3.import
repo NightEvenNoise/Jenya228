@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dengi_vernyt.mp3-91f2b753d6b684932fdca4c9de9c56cd.mp3str"
+
+[deps]
+
+source_file="res://dengi_vernyt.mp3"
+dest_files=[ "res://.import/dengi_vernyt.mp3-91f2b753d6b684932fdca4c9de9c56cd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

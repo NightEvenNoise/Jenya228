@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HitlerRap.ogg-1076f3cc917f55a0393d1ce8214202e2.oggstr"
+
+[deps]
+
+source_file="res://hitler/HitlerRap.ogg"
+dest_files=[ "res://.import/HitlerRap.ogg-1076f3cc917f55a0393d1ce8214202e2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

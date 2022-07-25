@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/serg_dornan.ogg-961a1e1704f6fe48b79d83dc1e4c883c.oggstr"
+
+[deps]
+
+source_file="res://enclave/serg_dornan.ogg"
+dest_files=[ "res://.import/serg_dornan.ogg-961a1e1704f6fe48b79d83dc1e4c883c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

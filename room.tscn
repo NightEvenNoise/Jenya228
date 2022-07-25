@@ -1,0 +1,176 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Boombox.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="PrismMesh" id=3]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Room01" type="MeshInstance" parent="."]
+transform = Transform( 8.35148, -1.5112e-06, 0.00437735, 5.01924e-05, 0.266621, -0.00591179, -0.00416331, 0.000179508, 8.78077, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Floor" type="MeshInstance" parent="Room01"]
+transform = Transform( 0.999999, 5.71259e-07, -0.00148504, -0.000475919, 0.999998, 0.0628238, 0.00134341, -5.79221e-05, 0.999997, -1.88437, 0.000334929, -0.000893462 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Room01"]
+transform = Transform( 0.0493617, 0, 0, 0, 16.3505, 0, 0, 0, 1.00293, 0.950635, 17.279, -0.00191907 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Room01"]
+transform = Transform( 0.00046708, -1.42109e-14, 0.716365, -3.49246e-10, 16.3505, 5.82077e-11, -0.0469439, -5.82077e-11, 0.013968, -0.219375, 17.279, 0.968028 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Room01"]
+transform = Transform( -0.000172492, 6.53699e-13, 0.968454, 0, 16.3505, -6.54836e-11, -0.0469481, 2.91038e-11, -0.00381599, -0.01593, 17.279, -0.955867 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Room01"]
+transform = Transform( 0.0493617, -2.84217e-14, 0, -1.59162e-12, 16.3505, 3.72529e-09, 1.81899e-12, -2.91038e-11, 1.00293, -2.81896, 17.279, -0.000896517 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Room01"]
+transform = Transform( -0.000102772, 9.34038e-06, 0.968459, -0.00294938, 16.3505, -0.000700641, -0.0469482, -0.000947055, -0.00251494, -1.89887, 17.2193, -0.95778 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="Room01"]
+transform = Transform( 0.000294388, 9.34038e-06, 0.96845, -0.00294955, 16.3505, -0.000235039, -0.0469474, -0.000947055, 0.00489629, -1.90171, 17.3393, 0.952654 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="SpotLight" type="SpotLight" parent="Room01"]
+transform = Transform( 0.119739, 5.96475e-05, -2.39883e-06, -2.12825e-05, 0.193314, 3.74566, 5.67735e-05, -0.113734, 0.00586981, -1.89832, 34.1391, -0.07845 )
+light_color = Color( 0.980392, 0.745098, 0.0431373, 1 )
+spot_range = 13.826
+spot_angle = 89.99
+
+[node name="SpotLight2" type="SpotLight" parent="Room01"]
+transform = Transform( 0.119739, 5.96475e-05, -2.39883e-06, -2.12825e-05, 0.193314, 3.74566, 5.67735e-05, -0.113734, 0.00586981, 0.23342, 34.4224, -0.0399529 )
+light_color = Color( 0.980392, 0.745098, 0.0431373, 1 )
+spot_range = 17.1286
+spot_angle = 89.99
+
+[node name="Room02" type="MeshInstance" parent="."]
+transform = Transform( 7.35193, -1.33033e-06, 0.00385344, 5.01924e-05, 0.266621, -0.00591179, -0.00322896, 0.000139222, 6.81015, 0.989852, 0, 15.556 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Room02"]
+transform = Transform( 0.0560729, -4.36436e-07, -1.8068e-05, -1.29413e-06, 16.3505, 0.00252, -1.3854e-06, 6.52311e-05, 0.696021, -0.941902, 17.2765, 0.298342 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="Room02"]
+transform = Transform( 0.000620965, -1.03205e-06, 0.953978, -0.000301226, 16.3505, 4.52076e-05, -0.0605279, 9.67222e-05, 0.0180242, 0.0379524, 17.2787, 0.953382 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="Room02"]
+transform = Transform( -0.0560697, 0.000402369, 0.0128232, 0.00105644, 16.3505, 0.0128026, 0.000221454, -0.000335676, 0.585389, 0.963546, 16.9834, -0.397821 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="SpotLight3" type="SpotLight" parent="Room02"]
+transform = Transform( 0.136019, 7.68964e-05, -3.30069e-06, -2.4176e-05, 0.192584, 3.74569, 6.44923e-05, -0.146643, 0.00759049, -0.0246456, 39.8041, -0.0307248 )
+light_color = Color( 0.980392, 0.745098, 0.0431373, 1 )
+spot_range = 13.826
+spot_angle = 89.99
+
+[node name="Room03" type="MeshInstance" parent="."]
+transform = Transform( 7.35193, -1.33033e-06, 0.00385344, 5.01924e-05, 0.266621, -0.00591179, -0.00322896, 0.000139222, 6.81015, -12.8897, 0, 15.556 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="Room03"]
+transform = Transform( -7.61266e-05, 3.84515e-06, 0.631929, -0.000301135, 16.3505, -3.19196e-05, -0.0605297, 9.67327e-05, 0.0118116, -0.30244, 17.2788, 0.953226 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="Room03"]
+transform = Transform( -0.0560693, 0.000402366, 0.0136422, 0.00104176, 16.3505, -0.0218462, -0.000440731, -0.000331382, -0.97726, -0.863071, 17.2569, -0.035372 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="SpotLight4" type="SpotLight" parent="Room03"]
+transform = Transform( 0.136019, 7.68964e-05, -3.30069e-06, -2.4176e-05, 0.192584, 3.74569, 6.44923e-05, -0.146643, 0.00759049, 0.00887942, 34.4215, -0.0828888 )
+light_color = Color( 0.980392, 0.745098, 0.0431373, 1 )
+spot_range = 13.826
+spot_angle = 89.99
+
+[node name="Room04(with" type="MeshInstance" parent="."]
+transform = Transform( 5.2818, -9.55738e-07, 0.0027684, 5.01924e-05, 0.266621, -0.00591179, -0.00322896, 0.000139222, 6.81015, -11.2089, 0, 29.0557 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="Room04(with"]
+transform = Transform( -0.0829481, 0.000593752, 0.0199365, 0.00104654, 16.3505, -0.0218474, -0.000453476, -0.000331292, -0.977257, -0.896864, 17.2576, -0.0078063 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance11" type="MeshInstance" parent="Room04(with"]
+transform = Transform( -0.0829481, 0.000593752, 0.0199365, 0.00104654, 16.3505, -0.0218474, -0.000453476, -0.000331292, -0.977257, 1.05335, 17.2574, -0.000712872 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance12" type="MeshInstance" parent="Room04(with"]
+transform = Transform( -0.000513197, 7.04138e-06, 0.946192, -0.000301034, 16.3505, -0.000188814, -0.0605289, 9.6725e-05, 0.00740382, 0.065402, 17.2775, 0.902127 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="SpotLight5" type="SpotLight" parent="Room04(with"]
+transform = Transform( 0.189329, 7.68963e-05, -3.30069e-06, -3.36515e-05, 0.192584, 3.74569, 8.97691e-05, -0.146643, 0.00759049, -0.400499, 34.4365, 0.589049 )
+light_color = Color( 0.494118, 0.490196, 0.466667, 1 )
+spot_range = 17.5984
+spot_angle = 10.6086
+
+[node name="Roof" type="MeshInstance" parent="."]
+transform = Transform( 20.4332, 0, 0, 0, 2.91874, 0, 0, 0, 17.0877, -6.2979, 11.9431, 6.74139 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Roof_part02" type="MeshInstance" parent="Roof"]
+transform = Transform( -0.194033, 0, 0, 0, 0.169293, 0, 0, 0, 0.553157, -1.07199, -0.939388, -0.423654 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Roof_part03" type="MeshInstance" parent="Roof"]
+transform = Transform( -0.40245, 0, 0, 0, 0.259024, 0, 0, 0, 0.553157, -0.314898, -0.801826, 1.15489 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Boombox" type="MeshInstance" parent="Roof"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13886, -1.90436, 0.437126 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="Boombox2" type="MeshInstance" parent="Roof"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1139, -1.64088, 0.436748 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="Boombox3" type="MeshInstance" parent="Roof"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15462, -2.00033, 0.407452 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="Boombox4" type="MeshInstance" parent="Roof"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.12066, -1.71001, 0.571484 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="Boombox5" type="MeshInstance" parent="Roof"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.12155, -1.75086, 0.454873 )
+mesh = ExtResource( 1 )
+material/0 = null

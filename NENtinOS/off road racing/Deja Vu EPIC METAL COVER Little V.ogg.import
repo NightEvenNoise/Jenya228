@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Deja Vu EPIC METAL COVER Little V.ogg-476931540cfc83203c28e15e1ffc29b1.oggstr"
+
+[deps]
+
+source_file="res://NENtinOS/off road racing/Deja Vu EPIC METAL COVER Little V.ogg"
+dest_files=[ "res://.import/Deja Vu EPIC METAL COVER Little V.ogg-476931540cfc83203c28e15e1ffc29b1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

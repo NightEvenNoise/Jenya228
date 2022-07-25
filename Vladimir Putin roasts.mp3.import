@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Vladimir Putin roasts.mp3-1977d196acda7c8aa69e719c411fe297.mp3str"
+
+[deps]
+
+source_file="res://Vladimir Putin roasts.mp3"
+dest_files=[ "res://.import/Vladimir Putin roasts.mp3-1977d196acda7c8aa69e719c411fe297.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

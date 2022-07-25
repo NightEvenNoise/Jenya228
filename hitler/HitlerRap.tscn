@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://hitler/hitler_full.tscn" type="PackedScene" id=1]
+[ext_resource path="res://hitler/HitlerRap.ogg" type="AudioStream" id=2]
+[ext_resource path="res://hitler/HitlerRap.gd" type="Script" id=3]
+[ext_resource path="res://Anchovy/Anchovy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interior_construction.jpg" type="Texture" id=5]
+[ext_resource path="res://sanek-regular-141656.otf" type="DynamicFontData" id=6]
+
+[sub_resource type="PanoramaSky" id=1]
+radiance_size = 0
+panorama = ExtResource( 5 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 6 )
+
+[node name="HitlerRap" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="hitler_full" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.97437, 0, 0.224951, 0, 1, 0, -0.224951, 0, 0.97437, 0, 0, 0 )
+
+[node name="Anchovy" parent="." instance=ExtResource( 4 )]
+transform = Transform( 3.4641, 0, -2, 0, 4, 0, 2, 0, 3.4641, 0.510836, 0, -0.102574 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501197, 0.981657 )
+current = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = 10.0
+autoplay = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -168.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 3 )
+text = "попуск"
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Hard Bass.ogg-a3a188f3cf6a6e3ef1586fd70a4a32e7.oggstr"
+
+[deps]
+
+source_file="res://Hard Bass.ogg"
+dest_files=[ "res://.import/Hard Bass.ogg-a3a188f3cf6a6e3ef1586fd70a4a32e7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

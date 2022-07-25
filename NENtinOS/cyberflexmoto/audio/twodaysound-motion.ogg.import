@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/twodaysound-motion.ogg-a3b39bb2ab4a3a8d805c7f424a53cc26.oggstr"
+
+[deps]
+
+source_file="res://NENtinOS/cyberflexmoto/audio/twodaysound-motion.ogg"
+dest_files=[ "res://.import/twodaysound-motion.ogg-a3b39bb2ab4a3a8d805c7f424a53cc26.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

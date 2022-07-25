@@ -1,0 +1,969 @@
+[gd_scene load_steps=62 format=2]
+
+[ext_resource path="res://Putin/Non skelet.dae" type="PackedScene" id=1]
+[ext_resource path="res://Putin/textures/male_elegantsuit01_diffuse.png" type="Texture" id=2]
+[ext_resource path="res://Putin/textures/shoes03_diffuse.png" type="Texture" id=3]
+[ext_resource path="res://Putin/textures/brown_eye.png" type="Texture" id=4]
+[ext_resource path="res://Putin/anim/Breathing Idle.anim" type="Animation" id=5]
+
+[sub_resource type="SpatialMaterial" id=56]
+albedo_color = Color( 1, 0.952941, 0.635294, 1 )
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="CapsuleShape" id=4]
+radius = 0.00407626
+height = 0.0326101
+
+[sub_resource type="CapsuleShape" id=5]
+radius = 0.00475563
+height = 0.038045
+
+[sub_resource type="CapsuleShape" id=6]
+radius = 0.00543503
+height = 0.0434802
+
+[sub_resource type="CapsuleShape" id=7]
+radius = 0.0061144
+height = 0.0489152
+
+[sub_resource type="CapsuleShape" id=8]
+radius = 0.00376735
+height = 0.0301388
+
+[sub_resource type="CapsuleShape" id=9]
+radius = 0.0620726
+height = 0.496581
+
+[sub_resource type="CapsuleShape" id=10]
+radius = 0.00589082
+height = 0.0471265
+
+[sub_resource type="CapsuleShape" id=11]
+radius = 0.00844073
+height = 0.0675259
+
+[sub_resource type="CapsuleShape" id=12]
+radius = 0.0114386
+height = 0.0915091
+
+[sub_resource type="CapsuleShape" id=13]
+radius = 0.00169154
+height = 0.0135323
+
+[sub_resource type="CapsuleShape" id=14]
+radius = 0.00135322
+height = 0.0108257
+
+[sub_resource type="CapsuleShape" id=15]
+radius = 0.00118148
+height = 0.00945187
+
+[sub_resource type="CapsuleShape" id=16]
+radius = 0.0640505
+height = 0.512404
+
+[sub_resource type="CapsuleShape" id=17]
+radius = 0.00128
+height = 0.01024
+
+[sub_resource type="CapsuleShape" id=18]
+radius = 0.00116235
+height = 0.00929883
+
+[sub_resource type="CapsuleShape" id=19]
+radius = 0.0663727
+height = 0.530981
+
+[sub_resource type="CapsuleShape" id=20]
+radius = 0.00142836
+height = 0.0114269
+
+[sub_resource type="CapsuleShape" id=21]
+radius = 0.00130726
+height = 0.0104581
+
+[sub_resource type="CapsuleShape" id=22]
+radius = 0.0665821
+height = 0.532657
+
+[sub_resource type="CapsuleShape" id=23]
+radius = 0.00120067
+height = 0.00960534
+
+[sub_resource type="CapsuleShape" id=24]
+radius = 0.00112087
+height = 0.00896699
+
+[sub_resource type="CapsuleShape" id=25]
+radius = 0.0664857
+height = 0.531885
+
+[sub_resource type="CapsuleShape" id=26]
+radius = 0.000751038
+height = 0.0060083
+
+[sub_resource type="CapsuleShape" id=27]
+radius = 0.000619647
+height = 0.00495718
+
+[sub_resource type="CapsuleShape" id=28]
+radius = 0.066125
+height = 0.529
+
+[sub_resource type="CapsuleShape" id=29]
+radius = 0.00589078
+height = 0.0471262
+
+[sub_resource type="CapsuleShape" id=30]
+radius = 0.0084361
+height = 0.0674888
+
+[sub_resource type="CapsuleShape" id=31]
+radius = 0.011437
+height = 0.0914963
+
+[sub_resource type="CapsuleShape" id=32]
+radius = 0.00166193
+height = 0.0132954
+
+[sub_resource type="CapsuleShape" id=33]
+radius = 0.0013295
+height = 0.010636
+
+[sub_resource type="CapsuleShape" id=34]
+radius = 0.00121511
+height = 0.00972087
+
+[sub_resource type="CapsuleShape" id=35]
+radius = 0.064023
+height = 0.512184
+
+[sub_resource type="CapsuleShape" id=36]
+radius = 0.00125059
+height = 0.0100047
+
+[sub_resource type="CapsuleShape" id=37]
+radius = 0.00114861
+height = 0.00918891
+
+[sub_resource type="CapsuleShape" id=38]
+radius = 0.0663794
+height = 0.531035
+
+[sub_resource type="CapsuleShape" id=39]
+radius = 0.00140714
+height = 0.0112572
+
+[sub_resource type="CapsuleShape" id=40]
+radius = 0.00127399
+height = 0.0101919
+
+[sub_resource type="CapsuleShape" id=41]
+radius = 0.0665635
+height = 0.532508
+
+[sub_resource type="CapsuleShape" id=42]
+radius = 0.00118102
+height = 0.00944817
+
+[sub_resource type="CapsuleShape" id=43]
+radius = 0.00106699
+height = 0.00853591
+
+[sub_resource type="CapsuleShape" id=44]
+radius = 0.0665059
+height = 0.532047
+
+[sub_resource type="CapsuleShape" id=45]
+radius = 0.000667782
+height = 0.00534226
+
+[sub_resource type="CapsuleShape" id=46]
+radius = 0.000595215
+height = 0.00476172
+
+[sub_resource type="CapsuleShape" id=47]
+radius = 0.0661178
+height = 0.528943
+
+[sub_resource type="CapsuleShape" id=48]
+radius = 0.0177811
+height = 0.142249
+
+[sub_resource type="CapsuleShape" id=49]
+radius = 0.0153971
+height = 0.123177
+
+[sub_resource type="CapsuleShape" id=50]
+radius = 0.00632709
+height = 0.0506167
+
+[sub_resource type="CapsuleShape" id=51]
+radius = 0.00599675
+height = 0.047974
+
+[sub_resource type="CapsuleShape" id=52]
+radius = 0.0177777
+height = 0.142222
+
+[sub_resource type="CapsuleShape" id=53]
+radius = 0.0154098
+height = 0.123278
+
+[sub_resource type="CapsuleShape" id=54]
+radius = 0.0062741
+height = 0.0501928
+
+[sub_resource type="CapsuleShape" id=55]
+radius = 0.00590027
+height = 0.0472022
+
+[node name="Non skelet" instance=ExtResource( 1 )]
+
+[node name="baseobj" parent="Skeleton" index="0"]
+material/0 = SubResource( 56 )
+
+[node name="low-polyobj" parent="Skeleton" index="1"]
+material/0 = SubResource( 1 )
+
+[node name="male_elegantsuit01obj" parent="Skeleton" index="2"]
+material/0 = SubResource( 2 )
+
+[node name="shoes03obj" parent="Skeleton" index="3"]
+material/0 = SubResource( 3 )
+
+[node name="Physical Bone mixamorig_Hips" type="PhysicalBone" parent="Skeleton" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.380888, -0.0382795 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0203813 )
+body_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0203813 )
+bone_name = "mixamorig_Hips"
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_Hips" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="Physical Bone mixamorig_Spine" type="PhysicalBone" parent="Skeleton" index="5"]
+transform = Transform( 1, 0, 0, 0, 0.999844, 0.017676, 0, -0.017676, 0.999844, 0, 0.421224, -0.0423931 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0237782 )
+body_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0237782 )
+bone_name = "mixamorig_Spine"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_Spine" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 5 )
+
+[node name="Physical Bone mixamorig_Spine1" type="PhysicalBone" parent="Skeleton" index="6"]
+transform = Transform( 1, 0, 0, 0, 0.999844, 0.017676, 0, -0.017676, 0.999844, 0, 0.468713, -0.0466301 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, 0.0271751 )
+body_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.96046e-08, -0.0271751 )
+bone_name = "mixamorig_Spine1"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_Spine1" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 6 )
+
+[node name="Physical Bone mixamorig_Spine2" type="PhysicalBone" parent="Skeleton" index="7"]
+transform = Transform( 1, 0, 0, 0, 0.999844, 0.017676, 0, -0.017676, 0.999844, 0, 0.522994, -0.0509871 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 0.030572 )
+body_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, -0.030572 )
+bone_name = "mixamorig_Spine2"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_Spine2" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="Physical Bone mixamorig_Neck" type="PhysicalBone" parent="Skeleton" index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.584669, -0.0403376 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0188368 )
+body_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0188368 )
+bone_name = "mixamorig_Neck"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_Neck" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 8 )
+
+[node name="Physical Bone mixamorig_Head" type="PhysicalBone" parent="Skeleton" index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.620641, -0.320668 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.310363 )
+body_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.310363 )
+bone_name = "mixamorig_Head"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_Head" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 9 )
+
+[node name="Physical Bone mixamorig_LeftShoulder" type="PhysicalBone" parent="Skeleton" index="10"]
+transform = Transform( -0.0139546, 0.955833, -0.293581, -0.0176152, -0.293799, -0.955705, -0.999748, -0.00816448, 0.0209367, 0.0367188, 0.604435, -0.0223579 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68424e-09, 2.9855e-08, 0.0294541 )
+body_offset = Transform( 1, 0, -3.72529e-09, 9.31323e-10, 1, -1.78989e-09, 1.86265e-09, 6.33008e-09, 1, 2.79397e-09, -2.98023e-08, -0.0294541 )
+bone_name = "mixamorig_LeftShoulder"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftShoulder" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="Physical Bone mixamorig_LeftArm" type="PhysicalBone" parent="Skeleton" index="11"]
+transform = Transform( 0.0547948, 0.997408, 0.046638, -0.0386906, 0.048794, -0.99806, -0.997748, 0.0528842, 0.0412634, 0.0824097, 0.601101, -0.0239635 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72529e-09, -6.87842e-11, 0.0422037 )
+body_offset = Transform( 1, 1.49012e-08, 0, 0, 1, 1.62981e-09, -7.45058e-09, 6.0536e-09, 1, -3.72529e-09, 0, -0.0422037 )
+bone_name = "mixamorig_LeftArm"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftArm" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 11 )
+
+[node name="Physical Bone mixamorig_LeftForeArm" type="PhysicalBone" parent="Skeleton" index="12"]
+transform = Transform( 0.0234423, 0.998585, 0.0477218, -0.0402037, 0.0486381, -0.998007, -0.998917, 0.0214767, 0.0412873, 0.165837, 0.620177, -0.02012 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28877e-09, 3.01918e-08, 0.0571933 )
+body_offset = Transform( 1, -3.72529e-09, -7.45058e-09, 0, 1, -6.8103e-09, 0, 5.76256e-09, 1, -1.86265e-09, -2.98023e-08, -0.0571933 )
+bone_name = "mixamorig_LeftForeArm"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftForeArm" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 12 )
+
+[node name="Physical Bone mixamorig_LeftHand" type="PhysicalBone" parent="Skeleton" index="13"]
+transform = Transform( 0.0769105, 0.996865, -0.0185659, -0.0272305, -0.016514, -0.999493, -0.996666, 0.0773766, 0.0258746, 0.282948, 0.577114, -0.0155205 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15075e-11, -5.96105e-08, 0.00845772 )
+body_offset = Transform( 1, 0, -3.72529e-09, -1.49012e-08, 1, 6.98492e-10, -3.72529e-09, 0, 1, 0, 5.96046e-08, -0.00845772 )
+bone_name = "mixamorig_LeftHand"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHand" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 13 )
+
+[node name="Physical Bone mixamorig_LeftHandThumb1" type="PhysicalBone" parent="Skeleton" index="14"]
+transform = Transform( 0.336038, 0.878104, -0.340605, -0.0306115, -0.351261, -0.935777, -0.941351, 0.324883, -0.0911565, 0.297418, 0.569513, -0.00447362 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23013e-08, 2.20241e-08, 0.00676602 )
+body_offset = Transform( 1, -2.98023e-08, 7.45058e-09, 0, 1, 4.84288e-08, 0, -9.31323e-09, 1, -2.23517e-08, -2.23517e-08, -0.00676602 )
+bone_name = "mixamorig_LeftHandThumb1"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandThumb1" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 14 )
+
+[node name="Physical Bone mixamorig_LeftHandThumb2" type="PhysicalBone" parent="Skeleton" index="15"]
+transform = Transform( 0.336038, 0.928468, -0.158191, -0.0306115, -0.157104, -0.987107, -0.941351, 0.336548, -0.0243703, 0.305905, 0.564628, 0.00322257 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47259e-09, 1.47361e-08, 0.0059073 )
+body_offset = Transform( 1, 0, 3.72529e-09, 2.98023e-08, 1, 2.79397e-08, 5.58794e-09, 6.51926e-09, 1, 7.45058e-09, -1.49012e-08, -0.0059073 )
+bone_name = "mixamorig_LeftHandThumb2"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandThumb2" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 15 )
+
+[node name="Physical Bone mixamorig_LeftHandThumb3" type="PhysicalBone" parent="Skeleton" index="16"]
+transform = Transform( 0.336038, 0.933292, -0.126669, -0.030612, -0.123596, -0.991861, -0.941351, 0.33718, -0.012963, 0.356892, 0.874558, 0.00989206 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49012e-08, 3.01006e-08, 0.320252 )
+body_offset = Transform( 1, 5.96046e-08, 0, 0, 1, -9.31323e-10, -9.31323e-10, 3.25963e-09, 1, -1.49012e-08, -2.98023e-08, -0.320252 )
+bone_name = "mixamorig_LeftHandThumb3"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandThumb3" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 16 )
+
+[node name="Physical Bone mixamorig_LeftHandIndex1" type="PhysicalBone" parent="Skeleton" index="17"]
+transform = Transform( 0.0218152, 0.999761, 0.00184982, -0.0262784, 0.00242321, -0.999652, -0.999416, 0.0217588, 0.0263245, 0.32011, 0.574369, 0.00139003 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72529e-09, -1.49009e-12, 0.00639987 )
+body_offset = Transform( 1, 3.72529e-09, 0, 0, 1, 2.32831e-10, 3.72529e-09, 5.82077e-11, 1, -3.72529e-09, 0, -0.00639987 )
+bone_name = "mixamorig_LeftHandIndex1"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandIndex1" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 17 )
+
+[node name="Physical Bone mixamorig_LeftHandIndex2" type="PhysicalBone" parent="Skeleton" index="18"]
+transform = Transform( 0.0218152, 0.99793, -0.0604868, -0.0262783, -0.0599081, -0.997858, -0.999417, 0.0233577, 0.0249167, 0.33327, 0.573802, 0.00169933 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79397e-09, -5.95962e-08, 0.00581175 )
+body_offset = Transform( 1, -3.72529e-09, 0, 0, 1, -1.45519e-09, 0, -1.5134e-09, 1, 2.79397e-09, 5.96046e-08, -0.00581175 )
+bone_name = "mixamorig_LeftHandIndex2"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandIndex2" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 18 )
+
+[node name="Physical Bone mixamorig_LeftHandIndex3" type="PhysicalBone" parent="Skeleton" index="19"]
+transform = Transform( 0.0218148, 0.998384, -0.0524843, -0.0262778, -0.0519058, -0.998307, -0.999417, 0.0231572, 0.0251032, 0.361935, 0.898608, -0.00621961 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09893e-09, -3.86339e-10, 0.331863 )
+body_offset = Transform( 1, -3.72529e-09, -3.72529e-09, -3.72529e-09, 1, 1.16415e-09, 3.72529e-09, -8.49832e-09, 1, -1.86265e-09, 0, -0.331863 )
+bone_name = "mixamorig_LeftHandIndex3"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandIndex3" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 19 )
+
+[node name="Physical Bone mixamorig_LeftHandMiddle1" type="PhysicalBone" parent="Skeleton" index="20"]
+transform = Transform( 0.0796006, 0.995883, -0.0433721, -0.0272752, -0.0413178, -0.998773, -0.996453, 0.0806863, 0.0238737, 0.321956, 0.575683, -0.0086454 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72529e-09, -5.95423e-08, 0.00714171 )
+body_offset = Transform( 1, 0, 0, 0, 1, -8.73115e-09, 0, 1.62981e-09, 1, -3.72529e-09, 5.96046e-08, -0.00714171 )
+bone_name = "mixamorig_LeftHandMiddle1"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandMiddle1" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 20 )
+
+[node name="Physical Bone mixamorig_LeftHandMiddle2" type="PhysicalBone" parent="Skeleton" index="21"]
+transform = Transform( 0.0796006, 0.994359, -0.0701008, -0.0272747, -0.0681252, -0.997304, -0.996453, 0.0812984, 0.0216983, 0.336329, 0.574478, -0.00746276 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.66376e-11, 0.0065363 )
+body_offset = Transform( 1, 0, 0, -1.49012e-08, 1, 1.47847e-08, 7.45058e-09, 1.234e-08, 1, 0, 0, -0.0065363 )
+bone_name = "mixamorig_LeftHandMiddle2"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandMiddle2" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 21 )
+
+[node name="Physical Bone mixamorig_LeftHandMiddle3" type="PhysicalBone" parent="Skeleton" index="22"]
+transform = Transform( 0.0796003, 0.995999, -0.0406031, -0.027275, -0.0385408, -0.998885, -0.996453, 0.0806196, 0.024098, 0.362388, 0.899608, -0.0142838 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86264e-09, -6.22013e-08, 0.33291 )
+body_offset = Transform( 1, 1.49012e-08, 0, 0, 1, 7.79983e-09, 0, -1.28057e-09, 1, 1.86265e-09, 5.96046e-08, -0.33291 )
+bone_name = "mixamorig_LeftHandMiddle3"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandMiddle3" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 22 )
+
+[node name="Physical Bone mixamorig_LeftHandRing1" type="PhysicalBone" parent="Skeleton" index="23"]
+transform = Transform( 0.109205, 0.991457, -0.0713229, -0.0277516, -0.0686832, -0.997253, -0.993632, 0.110884, 0.0200144, 0.32449, 0.574506, -0.0176249 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.38662e-12, 0.00600338 )
+body_offset = Transform( 1, 0, 0, -1.49012e-08, 1, 1.39698e-09, 1.86265e-09, 1.55997e-08, 1, 0, 0, -0.00600338 )
+bone_name = "mixamorig_LeftHandRing1"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandRing1" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 23 )
+
+[node name="Physical Bone mixamorig_LeftHandRing2" type="PhysicalBone" parent="Skeleton" index="24"]
+transform = Transform( 0.109205, 0.991156, -0.0754011, -0.027752, -0.0727851, -0.996962, -0.993632, 0.110966, 0.0195581, 0.336388, 0.573281, -0.0162816 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4297e-09, 0, 0.00560427 )
+body_offset = Transform( 1, 0, -3.72529e-09, 0, 1, 0, -1.86265e-09, 3.25963e-09, 1, 7.45058e-09, 0, -0.00560427 )
+bone_name = "mixamorig_LeftHandRing2"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandRing2" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 24 )
+
+[node name="Physical Bone mixamorig_LeftHandRing3" type="PhysicalBone" parent="Skeleton" index="25"]
+transform = Transform( 0.109205, 0.98446, -0.137524, -0.0277513, -0.135278, -0.990419, -0.993632, 0.111975, 0.0125477, 0.392792, 0.896121, -0.0190975 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.61777e-09, -9.24923e-09, 0.332428 )
+body_offset = Transform( 1, -1.49012e-08, 6.51926e-09, 0, 1, 2.78233e-08, 9.31323e-10, -2.44472e-09, 1, 7.45058e-09, 0, -0.332428 )
+bone_name = "mixamorig_LeftHandRing3"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandRing3" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 25 )
+
+[node name="Physical Bone mixamorig_LeftHandPinky1" type="PhysicalBone" parent="Skeleton" index="26"]
+transform = Transform( 0.0465452, 0.997113, -0.0600049, -0.0267153, -0.0588061, -0.997912, -0.998559, 0.0480508, 0.0239007, 0.32585, 0.571092, -0.024445 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.36069e-11, 0.00375521 )
+body_offset = Transform( 1, 0, 0, 0, 1, 6.28643e-09, 3.72529e-09, 8.14907e-10, 1, 0, 0, -0.00375521 )
+bone_name = "mixamorig_LeftHandPinky1"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandPinky1" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 26 )
+
+[node name="Physical Bone mixamorig_LeftHandPinky2" type="PhysicalBone" parent="Skeleton" index="27"]
+transform = Transform( 0.0465454, 0.998607, 0.0248505, -0.0267148, 0.0261135, -0.999302, -0.998559, 0.0458486, 0.0278932, 0.333038, 0.569999, -0.0241141 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.58794e-09, 2.98005e-08, 0.00309837 )
+body_offset = Transform( 1, 1.49012e-08, 0, 7.45058e-09, 1, 5.82077e-10, 0, -3.49246e-10, 1, -5.58794e-09, -2.98023e-08, -0.00309837 )
+bone_name = "mixamorig_LeftHandPinky2"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandPinky2" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 27 )
+
+[node name="Physical Bone mixamorig_LeftHandPinky3" type="PhysicalBone" parent="Skeleton" index="28"]
+transform = Transform( 0.0465454, 0.967778, 0.247466, -0.0267149, 0.248852, -0.968173, -0.998559, 0.0384525, 0.037437, 0.257484, 0.887167, -0.036114 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72529e-09, 1.18164e-08, 0.330625 )
+body_offset = Transform( 1, 0, 0, -7.45058e-09, 1, -3.57395e-08, -7.45058e-09, -2.33995e-08, 1, -3.72529e-09, 0, -0.330625 )
+bone_name = "mixamorig_LeftHandPinky3"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftHandPinky3" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 28 )
+
+[node name="Physical Bone mixamorig_RightShoulder" type="PhysicalBone" parent="Skeleton" index="29"]
+transform = Transform( 0.00313281, -0.955833, 0.293896, 0.0175945, -0.293799, -0.955706, 0.999841, 0.00816504, 0.0158964, -0.0367282, 0.604436, -0.0217284 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04105e-09, 1.47426e-08, 0.0294539 )
+body_offset = Transform( 1, -9.31323e-10, -3.72529e-09, 9.31323e-10, 1, 5.38421e-09, -3.72529e-09, 7.00675e-08, 1, -9.31323e-10, -1.49012e-08, -0.0294539 )
+bone_name = "mixamorig_RightShoulder"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightShoulder" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 29 )
+
+[node name="Physical Bone mixamorig_RightArm" type="PhysicalBone" parent="Skeleton" index="30"]
+transform = Transform( 0.0425776, -0.997961, -0.0475354, 0.0297048, 0.0488216, -0.998365, 0.998652, 0.0410964, 0.0317222, -0.0823726, 0.60109, -0.0221171 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4797e-09, 2.84807e-10, 0.0421805 )
+body_offset = Transform( 1, 0, -7.45058e-09, 7.45058e-09, 1, -6.75209e-09, 0, -3.49246e-10, 1, 2.79397e-09, 0, -0.0421805 )
+bone_name = "mixamorig_RightArm"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightArm" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 30 )
+
+[node name="Physical Bone mixamorig_RightForeArm" type="PhysicalBone" parent="Skeleton" index="31"]
+transform = Transform( 0.0150301, -0.998725, -0.0481967, 0.0310404, 0.0486452, -0.998333, 0.999405, 0.0135089, 0.0317315, -0.165811, 0.620187, -0.019127 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.31323e-10, -3.84455e-10, 0.0571852 )
+body_offset = Transform( 1, 0, 0, 0, 1, 6.72298e-09, 0, 6.98492e-09, 1, 9.31323e-10, 0, -0.0571852 )
+bone_name = "mixamorig_RightForeArm"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightForeArm" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 31 )
+
+[node name="Physical Bone mixamorig_RightHand" type="PhysicalBone" parent="Skeleton" index="32"]
+transform = Transform( 0.0902262, -0.995717, 0.020146, 0.0267753, -0.0177959, -0.999483, 0.995562, 0.0907187, 0.0250547, -0.282959, 0.576966, -0.0159753 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09552e-11, -5.41717e-11, 0.00830948 )
+body_offset = Transform( 1, 0, -3.72529e-09, 0, 1, 6.51926e-09, 3.72529e-09, 9.31323e-10, 1, 0, 0, -0.00830948 )
+bone_name = "mixamorig_RightHand"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHand" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 32 )
+
+[node name="Physical Bone mixamorig_RightHandThumb1" type="PhysicalBone" parent="Skeleton" index="33"]
+transform = Transform( 0.358987, -0.87399, 0.327524, 0.03062, -0.339697, -0.940037, 0.932841, 0.34749, -0.0951854, -0.296808, 0.569727, -0.00468627 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.40105e-09, 7.8468e-09, 0.00664747 )
+body_offset = Transform( 1, 0, 7.45058e-09, 0, 1, -5.96046e-08, -7.45058e-09, 3.72529e-09, 1, -7.45058e-09, -7.45058e-09, -0.00664747 )
+bone_name = "mixamorig_RightHandThumb1"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandThumb1" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Physical Bone mixamorig_RightHandThumb2" type="PhysicalBone" parent="Skeleton" index="34"]
+transform = Transform( 0.358987, -0.91384, 0.189801, 0.0306209, -0.191716, -0.980972, 0.93284, 0.357968, -0.0408418, -0.305255, 0.565291, 0.00328738 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.48785e-08, -1.58433e-10, 0.00607556 )
+body_offset = Transform( 1, 1.19209e-07, -3.72529e-09, 0, 1, 2.6077e-08, 0, -2.14204e-08, 1, 1.49012e-08, 0, -0.00607556 )
+bone_name = "mixamorig_RightHandThumb2"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandThumb2" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 34 )
+
+[node name="Physical Bone mixamorig_RightHandThumb3" type="PhysicalBone" parent="Skeleton" index="35"]
+transform = Transform( 0.358987, -0.923545, 0.134882, 0.0306206, -0.132783, -0.990672, 0.932841, 0.359769, -0.0193885, -0.358832, 0.874103, 0.0121828 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38504e-09, -2.63738e-08, 0.320115 )
+body_offset = Transform( 1, 0, -7.45058e-09, -5.96046e-08, 1, -1.07102e-08, 3.72529e-09, -3.25963e-09, 1, 0, 2.98023e-08, -0.320115 )
+bone_name = "mixamorig_RightHandThumb3"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandThumb3" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 35 )
+
+[node name="Physical Bone mixamorig_RightHandIndex1" type="PhysicalBone" parent="Skeleton" index="36"]
+transform = Transform( 0.00016682, -0.999998, 0.00200385, 0.0250634, -0.00199817, -0.999684, 0.999686, 0.000217146, 0.0250636, -0.320952, 0.574341, 0.00176498 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3294e-11, 5.96069e-08, 0.00625294 )
+body_offset = Transform( 1, -2.91038e-11, -3.72529e-09, 1.45519e-11, 1, -3.67891e-10, 3.72529e-09, -9.3678e-11, 1, 0, -5.96046e-08, -0.00625294 )
+bone_name = "mixamorig_RightHandIndex1"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandIndex1" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 36 )
+
+[node name="Physical Bone mixamorig_RightHandIndex2" type="PhysicalBone" parent="Skeleton" index="37"]
+transform = Transform( 0.000167019, -0.996858, 0.0792192, 0.025064, -0.07919, -0.996545, 0.999686, 0.00215196, 0.024972, -0.333901, 0.573788, 0.00177843 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86265e-09, 5.96134e-08, 0.00574303 )
+body_offset = Transform( 1, 4.65661e-10, 0, 0, 1, -1.52431e-09, -3.72529e-09, -2.1937e-09, 1, -1.86265e-09, -5.96046e-08, -0.00574303 )
+bone_name = "mixamorig_RightHandIndex2"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandIndex2" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 37 )
+
+[node name="Physical Bone mixamorig_RightHandIndex3" type="PhysicalBone" parent="Skeleton" index="38"]
+transform = Transform( 0.000166804, -0.998997, 0.0447823, 0.0250636, -0.0447638, -0.998684, 0.999686, 0.00128919, 0.0250314, -0.359759, 0.898616, -0.00635883 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.31948e-09, 0.331897 )
+body_offset = Transform( 1, 0, 0, 2.32831e-10, 1, -6.98856e-09, -3.72529e-09, 1.27693e-09, 1, 0, 0, -0.331897 )
+bone_name = "mixamorig_RightHandIndex3"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandIndex3" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 38 )
+
+[node name="Physical Bone mixamorig_RightHandMiddle1" type="PhysicalBone" parent="Skeleton" index="39"]
+transform = Transform( 0.0860812, -0.996288, 0.000734576, 0.0267009, 0.00157055, -0.999643, 0.995931, 0.0860698, 0.026737, -0.321948, 0.575003, -0.00861153 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84954e-09, -5.96096e-08, 0.00703573 )
+body_offset = Transform( 1, 0, -1.86265e-09, 1.49012e-08, 1, 6.98492e-10, 0, 0, 1, 1.86265e-09, 5.96046e-08, -0.00703573 )
+bone_name = "mixamorig_RightHandMiddle1"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandMiddle1" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 39 )
+
+[node name="Physical Bone mixamorig_RightHandMiddle2" type="PhysicalBone" parent="Skeleton" index="40"]
+transform = Transform( 0.0860814, -0.99315, 0.0790188, 0.0267009, -0.0769851, -0.996675, 0.995931, 0.0879047, 0.0198911, -0.336466, 0.57434, -0.0073478 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85078e-09, 5.9526e-08, 0.00636989 )
+body_offset = Transform( 1, 1.49012e-08, -1.86265e-09, 0, 1, 1.234e-08, 3.72529e-09, 1.5134e-09, 1, 1.86265e-09, -5.96046e-08, -0.00636989 )
+bone_name = "mixamorig_RightHandMiddle2"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandMiddle2" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 40 )
+
+[node name="Physical Bone mixamorig_RightHandMiddle3" type="PhysicalBone" parent="Skeleton" index="41"]
+transform = Transform( 0.0860813, -0.986534, 0.139077, 0.0267012, -0.137261, -0.990175, 0.995931, 0.0889488, 0.0145259, -0.394903, 0.896559, -0.0109344 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.17046e-08, 0.332818 )
+body_offset = Transform( 1, 0, 0, -1.49012e-08, 1, 2.43308e-08, 3.72529e-09, -2.43308e-08, 1, 0, -2.98023e-08, -0.332818 )
+bone_name = "mixamorig_RightHandMiddle3"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandMiddle3" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 41 )
+
+[node name="Physical Bone mixamorig_RightHandRing1" type="PhysicalBone" parent="Skeleton" index="42"]
+transform = Transform( 0.0813952, -0.990806, 0.108066, 0.026617, -0.106226, -0.993986, 0.996327, 0.0837819, 0.017726, -0.325774, 0.574506, -0.0175049 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.58794e-09, 1.92484e-11, 0.00590509 )
+body_offset = Transform( 1, 0, 0, 0, 1, -3.25963e-09, 0, 1.16415e-09, 1, 5.58794e-09, 0, -0.00590509 )
+bone_name = "mixamorig_RightHandRing1"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandRing1" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 42 )
+
+[node name="Physical Bone mixamorig_RightHandRing2" type="PhysicalBone" parent="Skeleton" index="43"]
+transform = Transform( 0.0813949, -0.995398, 0.0505707, 0.0266163, -0.0485504, -0.998466, 0.996327, 0.0826163, 0.0225428, -0.337107, 0.57271, -0.0165253 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47046e-09, -5.96022e-08, 0.00533503 )
+body_offset = Transform( 1, 1.49012e-08, -3.72529e-09, 0, 1, -4.65661e-10, 0, -1.16415e-10, 1, -7.45058e-09, 5.96046e-08, -0.00533503 )
+bone_name = "mixamorig_RightHandRing2"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandRing2" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 43 )
+
+[node name="Physical Bone mixamorig_RightHandRing3" type="PhysicalBone" parent="Skeleton" index="44"]
+transform = Transform( 0.0813945, -0.996461, -0.0209565, 0.0266165, 0.0231915, -0.999377, 0.996327, 0.0807865, 0.0284105, -0.340489, 0.899187, -0.0249707 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86265e-09, 1.54846e-09, 0.33253 )
+body_offset = Transform( 1, 0, 0, 0, 1, -4.65661e-09, 3.72529e-09, -3.49246e-09, 1, -1.86265e-09, 0, -0.33253 )
+bone_name = "mixamorig_RightHandRing3"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandRing3" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 44 )
+
+[node name="Physical Bone mixamorig_RightHandPinky1" type="PhysicalBone" parent="Skeleton" index="45"]
+transform = Transform( 0.051037, -0.998619, 0.0125334, 0.0260553, -0.0112137, -0.999597, 0.998357, 0.051343, 0.0254476, -0.326983, 0.570502, -0.0243338 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.71907e-09, -6.21925e-12, 0.00333893 )
+body_offset = Transform( 1, 0, 1.86265e-09, 0, 1, 1.86265e-09, -3.72529e-09, 2.32831e-09, 1, -3.72529e-09, 0, -0.00333893 )
+bone_name = "mixamorig_RightHandPinky1"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandPinky1" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 45 )
+
+[node name="Physical Bone mixamorig_RightHandPinky2" type="PhysicalBone" parent="Skeleton" index="46"]
+transform = Transform( 0.0510371, -0.997754, 0.0433865, 0.0260551, -0.0420985, -0.998774, 0.998357, 0.0521049, 0.0238489, -0.333739, 0.570062, -0.0239899 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96085e-08, 0.00297606 )
+body_offset = Transform( 1, 0, 0, 0, 1, 1.28057e-09, 0, -6.51926e-09, 1, 0, 5.96046e-08, -0.00297606 )
+bone_name = "mixamorig_RightHandPinky2"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandPinky2" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 46 )
+
+[node name="Physical Bone mixamorig_RightHandPinky3" type="PhysicalBone" parent="Skeleton" index="47"]
+transform = Transform( 0.0510369, -0.948102, -0.313846, 0.0260556, 0.315413, -0.948597, 0.998357, 0.040236, 0.0408014, -0.235795, 0.880434, -0.0370924 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46308e-09, -5.78343e-08, 0.330589 )
+body_offset = Transform( 1, -7.45058e-09, -7.45058e-09, 0, 1, -5.3551e-09, 0, 5.82077e-09, 1, 0, 5.96046e-08, -0.330589 )
+bone_name = "mixamorig_RightHandPinky3"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightHandPinky3" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 47 )
+
+[node name="Physical Bone mixamorig_LeftUpLeg" type="PhysicalBone" parent="Skeleton" index="48"]
+transform = Transform( -0.996213, 0.0869468, 8.12823e-08, -0.0869291, -0.996008, -0.0202547, -0.00176111, -0.0201783, 0.999795, 0.0341664, 0.360062, -0.104946 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.48805e-08, -5.92735e-08, 0.0889057 )
+body_offset = Transform( 1, -1.27693e-08, -2.32831e-10, 1.13178e-08, 1, -3.72529e-09, -2.32831e-10, 0, 1, 1.49012e-08, 5.96046e-08, -0.0889057 )
+bone_name = "mixamorig_LeftUpLeg"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftUpLeg" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 48 )
+
+[node name="Physical Bone mixamorig_LeftLeg" type="PhysicalBone" parent="Skeleton" index="49"]
+transform = Transform( -0.999264, 0.0383443, -0.000202589, -0.0383367, -0.999153, -0.0149848, -0.000776413, -0.0149662, 0.999887, 0.0496422, 0.182313, -0.0966228 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72529e-09, 2.98023e-08, 0.0769855 )
+body_offset = Transform( 1, -1.59071e-09, 0, 8.07358e-09, 1, 0, 0, 1.86265e-09, 1, -3.72529e-09, -2.98023e-08, -0.0769855 )
+bone_name = "mixamorig_LeftLeg"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftLeg" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 49 )
+
+[node name="Physical Bone mixamorig_LeftFoot" type="PhysicalBone" parent="Skeleton" index="50"]
+transform = Transform( -0.99196, -0.0883616, -0.0905941, -0.0362522, -0.487463, 0.872391, -0.121247, 0.868662, 0.48034, 0.0583965, -0.000279788, -0.0371462 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.68628e-09, -1.83967e-09, 0.0316354 )
+body_offset = Transform( 1, 0, 7.45058e-09, 1.49012e-08, 1, -5.96046e-08, 1.11759e-08, 0, 1, 7.45058e-09, 3.72529e-09, -0.0316354 )
+bone_name = "mixamorig_LeftFoot"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftFoot" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 50 )
+
+[node name="Physical Bone mixamorig_LeftToeBase" type="PhysicalBone" parent="Skeleton" index="51"]
+transform = Transform( -0.988768, -0.0136995, 0.148825, 0.148453, 0.0250542, 0.988602, -0.0172725, 0.999592, -0.0227388, 0.0454775, -0.0331655, 0.0336924 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.04552e-10, -7.45058e-09, 0.0299837 )
+body_offset = Transform( 1, -1.86265e-09, 1.01572e-08, 0, 1, 0, 4.08327e-08, -3.72529e-09, 1, 0, 7.45058e-09, -0.0299837 )
+bone_name = "mixamorig_LeftToeBase"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_LeftToeBase" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 51 )
+
+[node name="Physical Bone mixamorig_RightUpLeg" type="PhysicalBone" parent="Skeleton" index="52"]
+transform = Transform( -0.996211, -0.086963, -1.16742e-07, 0.0869619, -0.9962, 0.0048283, -0.000419944, 0.00481071, 0.999989, -0.0341666, 0.357832, -0.106174 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.44799e-09, -5.95219e-08, 0.0888887 )
+body_offset = Transform( 1, 1.35115e-08, 2.91038e-11, -8.24684e-10, 1, -9.31323e-10, -5.82077e-11, 9.31323e-10, 1, -7.45058e-09, 5.96046e-08, -0.0888887 )
+bone_name = "mixamorig_RightUpLeg"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightUpLeg" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 52 )
+
+[node name="Physical Bone mixamorig_RightLeg" type="PhysicalBone" parent="Skeleton" index="53"]
+transform = Transform( -0.999264, -0.0383128, -0.00185027, 0.0383572, -0.998322, -0.0433839, -0.000184724, -0.043423, 0.999057, -0.049484, 0.184502, -0.0934071 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74323e-09, 2.92283e-08, 0.0770489 )
+body_offset = Transform( 1, 8.99036e-09, 2.32831e-10, -6.73117e-09, 1, 7.45058e-09, 2.47383e-10, -7.45058e-09, 1, 3.72529e-09, -2.98023e-08, -0.0770489 )
+bone_name = "mixamorig_RightLeg"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightLeg" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 53 )
+
+[node name="Physical Bone mixamorig_RightFoot" type="PhysicalBone" parent="Skeleton" index="54"]
+transform = Transform( -0.992147, 0.0890972, 0.0877839, 0.0328262, -0.491754, 0.870115, 0.120693, 0.866163, 0.484968, -0.0582843, 2.39257e-05, -0.038336 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72529e-09, 3.72529e-09, 0.0313705 )
+body_offset = Transform( 1, 0, 0, -7.45058e-09, 1, 0, 1.11759e-08, 5.96046e-08, 1, 3.72529e-09, -3.72529e-09, -0.0313705 )
+bone_name = "mixamorig_RightFoot"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightFoot" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 54 )
+
+[node name="Physical Bone mixamorig_RightToeBase" type="PhysicalBone" parent="Skeleton" index="55"]
+transform = Transform( -0.98884, 0.0140976, -0.148313, -0.147922, 0.0256021, 0.988667, 0.0177355, 0.999573, -0.0232319, -0.045565, -0.0327002, 0.0319069 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.44199e-09, -1.97255e-09, 0.0295013 )
+body_offset = Transform( 1, 0, -2.91038e-10, 1.86265e-09, 1, 3.72529e-09, 3.3062e-08, 0, 1, 7.45058e-09, 1.86265e-09, -0.0295013 )
+bone_name = "mixamorig_RightToeBase"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Skeleton/Physical Bone mixamorig_RightToeBase" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 55 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Breathing Idle"
+"anims/Breathing Idle" = ExtResource( 5 )

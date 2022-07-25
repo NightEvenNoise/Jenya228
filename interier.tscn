@@ -1,0 +1,417 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://jenya/Jenya.tscn" type="PackedScene" id=1]
+[ext_resource path="res://textures/marble_01_diff_1k.jpg" type="Texture" id=2]
+[ext_resource path="res://television/Television.tscn" type="PackedScene" id=3]
+[ext_resource path="res://coffeetable/CoffeeTable_01.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Morshu RTX - Morshu Remix.webm" type="VideoStream" id=5]
+[ext_resource path="res://interier.gd" type="Script" id=6]
+[ext_resource path="res://textures/castle_brick_broken_06_diff_1k.jpg" type="Texture" id=7]
+[ext_resource path="res://Ukulele/Ukulele_01.tscn" type="PackedScene" id=8]
+[ext_resource path="res://cheesebox/CheeseBox_01.tscn" type="PackedScene" id=9]
+[ext_resource path="res://russianmafia/RussianMafiaLeader.tscn" type="PackedScene" id=10]
+[ext_resource path="res://buttons/up.png" type="Texture" id=11]
+[ext_resource path="res://buttons/sstar.png" type="Texture" id=12]
+[ext_resource path="res://buttons/cross.png" type="Texture" id=13]
+[ext_resource path="res://buttons/5Star.png" type="Texture" id=14]
+[ext_resource path="res://buttons/uparrow.png" type="Texture" id=15]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 60, 60, 1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 0.001, 1 )
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 7 )
+uv1_scale = Vector3( 3, 0.4, 1 )
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="BoxShape" id=7]
+
+[sub_resource type="BoxShape" id=8]
+
+[sub_resource type="BoxShape" id=9]
+
+[sub_resource type="GDScript" id=10]
+script/source = "extends KinematicBody
+
+export var head_path: NodePath
+export var cam_path: NodePath
+onready var head: Spatial = get_node(head_path)
+onready var cam: CollisionShape = get_node(cam_path) #Camera = get_node(cam_path)
+var mouse_axis := Vector2()
+export var mouse_sensitivity := 10.0
+
+const VEL_SPEED = 1
+const ROT_SPEED = 0.01
+const GR_SPEED = 0.5
+const RUN_SPEED = 4
+
+onready var anim = $Jenya/AnimationPlayer
+var block_control = false
+var vel = Vector3()
+var state = 'drunk_idle'
+var need_state = ''
+var srat = false
+var skolzko = false
+
+#remote func _jenya(jposition,jrotation,jscale):
+	#translation = jposition
+	#rotation = jrotation
+	#scale = jscale
+
+func _process(_delta: float) -> void:
+	camera_rotation()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventScreenDrag:
+		mouse_axis = event.relative
+
+func _physics_process(d):
+	var dir = Vector3()
+	var rot = 0
+	#var need_state = ''
+	need_state = ''
+	var need_anim = ''
+	
+	if anim.current_animation != 'uppercut' && anim.current_animation != 'injuredjump' && !block_control:
+		if Input.is_action_pressed('ui_right'):
+			rot = -1
+		elif Input.is_action_pressed('ui_left'):
+			rot = 1
+
+		if Input.is_action_pressed('ui_up'):
+			dir.z = 1
+			if Input.is_action_just_pressed(\"ui_jump\"):
+				anim.play(\"injuredjump\")
+				vel.y += 10
+			if anim.current_animation != 'injuredjump' && anim.current_animation != 'drunk_run' && anim.current_animation != 'inmovejump':
+				anim.play(\"drunk_walk\")
+			if Input.is_action_pressed('ui_shift'):
+				dir.z = RUN_SPEED
+				if Input.is_action_just_pressed(\"ui_jump\"):
+					anim.play(\"inmovejump\")
+				elif anim.current_animation != 'inmovejump':
+					anim.play(\"drunk_run\")
+		elif Input.is_action_pressed('ui_down'):
+			dir.z = -1
+		if Input.is_action_just_pressed('ui_attack'):
+			need_state = 'uppercut'
+		if Input.is_action_just_pressed(\"ui_jump\"):
+			need_state = 'injuredjump'
+			vel.y += 10
+	if Input.is_action_just_pressed(\"cam_chng\"):
+		$head/Camera.current = not $head/Camera.current
+		#$Jenya/Skeleton/BoneAttachment/Camera.current = not $Jenya/Skeleton/BoneAttachment/Camera.current
+	if srat:
+		need_state = 'sitting_laughing'
+	if skolzko:
+		need_state = 'skolzko'
+
+	if rot:
+		rotate_y(rot * ROT_SPEED)
+		need_state = 'drunk_walk'
+
+	if dir:
+		need_state = 'drunk_run' if dir.z == RUN_SPEED else 'drunk_walk'
+		dir = dir.rotated(Vector3.UP, rotation.y) * VEL_SPEED
+
+	vel.z = dir.z
+	vel.x = dir.x
+
+	if !is_on_floor():
+		vel.y -= GR_SPEED
+
+	vel = move_and_slide(vel, Vector3.UP)
+	
+	if anim.current_animation != 'uppercut' && anim.current_animation != 'injuredjump':
+		if !need_state: need_state = 'drunk_idle'
+	set_state(need_state, need_anim)
+	#rpc_unreliable('_jenya',translation,rotation,scale)
+
+func set_state(s, a=''):
+	if !s || state == s: return
+	state = s
+	if !a: a = s 
+	if anim.current_animation == a: return
+	if a == 'drunk_run': anim.playback_speed = 1
+	else: anim.playback_speed = 1
+	anim.play(a, 0.3)
+
+func camera_rotation() -> void:
+	if mouse_axis.length() > 0 && !block_control:
+		var _smoothness := 80
+		# Get mouse delta
+		var horizontal: float = -(mouse_axis.x * mouse_sensitivity) / _smoothness
+		var vertical: float = (mouse_axis.y * mouse_sensitivity) / _smoothness
+		
+		mouse_axis = Vector2()
+		
+		rotate_y(deg2rad(horizontal))
+		head.rotate_x(deg2rad(vertical))
+		
+		# Clamp mouse rotation
+		var temp_rot: Vector3 = head.rotation_degrees
+		temp_rot.x = clamp(temp_rot.x, -90, 90)
+		head.rotation_degrees = temp_rot
+"
+
+[sub_resource type="CapsuleShape" id=11]
+radius = 0.3832
+height = 0.823171
+
+[sub_resource type="GDScript" id=12]
+script/source = "extends VideoPlayer
+
+func _physics_process(_delta) -> void:
+	if !is_playing():
+		play()
+"
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 0.927413, 0.486942, 0.495297 )
+
+[sub_resource type="SpatialMaterial" id=14]
+
+[sub_resource type="QuadMesh" id=15]
+material = SubResource( 14 )
+size = Vector2( 0.4, 0.3 )
+
+[sub_resource type="SpatialMaterial" id=16]
+
+[sub_resource type="BoxShape" id=17]
+extents = Vector3( 0.188763, 0.553311, 0.0531158 )
+
+[sub_resource type="BoxShape" id=18]
+extents = Vector3( 0.72176, 0.21504, 0.329555 )
+
+[node name="interier" type="Spatial"]
+script = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 13, 0, 0, 0, 0.1, 0, 0, 0, 13, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 13, 0, 0, 0, 0.1, 0, 0, 0, 13, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 13, 0, 0, 0, 2, 0, 0, 0, 0.1, 0, 1.96854, -12.9026 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 13, 0, 0, 0, 2, 0, 0, 0, 0.1, 0, 1.96854, -12.9026 )
+shape = SubResource( 6 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 13, 0, 0, 0, 2, 0, 0, 0, 0.1, 0, 1.96854, 12.887 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 13, 0, 0, 0, 2, 0, 0, 0, 0.1, 0, 1.96854, 12.887 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="StaticBody"]
+transform = Transform( -2.11797e-06, 0, 0.1, 0, 2, 0, -13, 0, -1.62921e-08, 12.8975, 1.96854, -0.0305328 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -2.11797e-06, 0, 0.1, 0, 2, 0, -13, 0, -1.62921e-08, 12.8975, 1.96854, -0.0305328 )
+shape = SubResource( 8 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="StaticBody"]
+transform = Transform( -2.11797e-06, 0, 0.1, 0, 2, 0, -13, 0, -1.62921e-08, -13.0452, 1.96854, -0.0305328 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -2.11797e-06, 0, 0.1, 0, 2, 0, -13, 0, -1.62921e-08, -13.0452, 1.96854, -0.0305328 )
+shape = SubResource( 9 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 13, 0, 0, 0, -0.1, 4.23594e-06, 0, -3.25841e-08, -13, 0, 3.96519, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Jenya" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55427, 0.048864, -10.7563 )
+script = SubResource( 10 )
+head_path = NodePath("Jenya")
+cam_path = NodePath("CollisionShape")
+
+[node name="Jenya" parent="Jenya" instance=ExtResource( 1 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="Jenya"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.749601, 0 )
+shape = SubResource( 11 )
+
+[node name="CoffeeTable_01" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653141, -0.00192565, -8.38395 )
+
+[node name="Television_01" parent="CoffeeTable_01" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.0128744, 0.480202, -0.0740576 )
+
+[node name="Viewport" type="Viewport" parent="CoffeeTable_01/Television_01"]
+size = Vector2( 400, 300 )
+usage = 0
+render_target_v_flip = true
+
+[node name="Node2D" type="Node2D" parent="CoffeeTable_01/Television_01/Viewport"]
+
+[node name="Control" type="Control" parent="CoffeeTable_01/Television_01/Viewport/Node2D"]
+margin_right = 400.0
+margin_bottom = 300.0
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="CoffeeTable_01/Television_01/Viewport/Node2D/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 500.0
+margin_bottom = 400.0
+
+[node name="VideoPlayer" type="VideoPlayer" parent="CoffeeTable_01/Television_01/Viewport/Node2D/Control/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -500.0
+margin_bottom = -300.0
+stream = ExtResource( 5 )
+autoplay = true
+script = SubResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="CoffeeTable_01"]
+
+[node name="CollisionShape" type="CollisionShape" parent="CoffeeTable_01/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503096, 0 )
+shape = SubResource( 13 )
+
+[node name="QuadMesh" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.728168, 0.77804, -8.65219 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="RigidBody" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.735589, 0.677428, 0, -0.677428, 0.735589, 0.144983, 0.0654579, -7.42874 )
+sleeping = true
+
+[node name="Ukulele_01" parent="RigidBody" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0.198541 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.556082, 0 )
+shape = SubResource( 17 )
+
+[node name="StaticBody2" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.328, 0, -12.436 )
+
+[node name="CheeseBox_01" parent="StaticBody2" instance=ExtResource( 9 )]
+transform = Transform( -9.77524e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -9.77524e-08, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21816, 0.000793457 )
+shape = SubResource( 18 )
+
+[node name="RussianMafiaLeader" parent="." instance=ExtResource( 10 )]
+transform = Transform( 10, 0, 0, 0, -4.37114e-07, 10, 0, -10, -4.37114e-07, 1.24198, 1.16698, 20.1712 )
+
+[node name="ControlAndroid" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left" type="Control" parent="ControlAndroid"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ControlAndroid/left"]
+position = Vector2( 130.108, -210.718 )
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 11 )
+action = "ui_up"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="ControlAndroid/left"]
+position = Vector2( 22.6274, 8.48541 )
+rotation = -1.5708
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 11 )
+action = "ui_left"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="ControlAndroid/left"]
+position = Vector2( 337.997, -93.3381 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 11 )
+action = "ui_right"
+
+[node name="right" type="Control" parent="ControlAndroid"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ControlAndroid/right"]
+position = Vector2( -124.451, -103.238 )
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 11 )
+action = "ui_shift"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="ControlAndroid/right"]
+position = Vector2( -306.884, -120.208 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 14 )
+action = "ui_attack"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="ControlAndroid/right"]
+visible = false
+position = Vector2( -138.593, -274.357 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 15 )
+action = "ui_jump"
+
+[node name="rightup" type="Control" parent="ControlAndroid"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 40.0
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="ControlAndroid/rightup"]
+position = Vector2( -96.1665, 8.45689 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 12 )
+action = "cam_chng"
+
+[node name="leftup" type="Control" parent="ControlAndroid"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ControlAndroid/leftup"]
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 13 )
+action = "ui_cancel"

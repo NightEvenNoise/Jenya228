@@ -1,0 +1,339 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://blaubeuren_hillside.jpg" type="Texture" id=1]
+[ext_resource path="res://ussr-stencil-regular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://textures/grass_path_3_diff_1k.jpg" type="Texture" id=3]
+[ext_resource path="res://jenya/CutScene.gd" type="Script" id=4]
+[ext_resource path="res://iuuuuuu.ogg" type="AudioStream" id=5]
+[ext_resource path="res://magaz.tscn" type="PackedScene" id=6]
+[ext_resource path="res://wetfloorsign/WetFloorSign_01.tscn" type="PackedScene" id=7]
+[ext_resource path="res://radio/multiband_radio.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://radio/radio_sheet.png" type="Texture" id=13]
+[ext_resource path="res://dom.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Putin/Putin.tscn" type="PackedScene" id=21]
+[ext_resource path="res://russianmafia/RussianMafiaLeader.tscn" type="PackedScene" id=25]
+[ext_resource path="res://T-80/Textures/T80_chassis_01_AM.dds" type="Texture" id=28]
+[ext_resource path="res://T-80/Chassis.obj" type="ArrayMesh" id=29]
+[ext_resource path="res://T-80/Hull.obj" type="ArrayMesh" id=30]
+[ext_resource path="res://T-80/Turret.obj" type="ArrayMesh" id=31]
+[ext_resource path="res://T-80/Gun.obj" type="ArrayMesh" id=32]
+[ext_resource path="res://T-80/Tracks.obj" type="ArrayMesh" id=33]
+[ext_resource path="res://T-80/Textures/T80_guns_AM.dds" type="Texture" id=34]
+[ext_resource path="res://T-80/Textures/T80_hull_01_AM.dds" type="Texture" id=35]
+[ext_resource path="res://T-80/Textures/T80_turret_01_AM.dds" type="Texture" id=36]
+[ext_resource path="res://cashregister/CashRegister_01.tscn" type="PackedScene" id=38]
+[ext_resource path="res://city.obj" type="ArrayMesh" id=39]
+[ext_resource path="res://building.jpg" type="Texture" id=40]
+[ext_resource path="res://textures/aspgaltbz.jpg" type="Texture" id=41]
+[ext_resource path="res://hitler/hitler_full.tscn" type="PackedScene" id=43]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_orientation = Basis( 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1 )
+background_energy = 2.0
+
+[sub_resource type="GDScript" id=33]
+script/source = "extends WorldEnvironment
+
+func _ready():
+	if g.optimization:
+		queue_free()
+"
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 0.1, 1, 0.1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 40 )
+uv1_scale = Vector3( 0.1, 0.2, 0.1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 41 )
+uv1_scale = Vector3( 0.3, 1, 0.4 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.388235, 0.152941, 0.152941, 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.207843, 0.67451, 0.203922, 1 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_texture = ExtResource( 13 )
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_texture = ExtResource( 28 )
+
+[sub_resource type="SpatialMaterial" id=23]
+albedo_texture = ExtResource( 28 )
+
+[sub_resource type="SpatialMaterial" id=24]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=25]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=26]
+albedo_texture = ExtResource( 35 )
+
+[sub_resource type="SpatialMaterial" id=27]
+albedo_texture = ExtResource( 36 )
+
+[sub_resource type="SpatialMaterial" id=28]
+albedo_texture = ExtResource( 34 )
+
+[sub_resource type="DynamicFont" id=40]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=38]
+resource_name = "CutScene"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spatial/Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 30.9558 ), Vector3( -1.31153, 0, 37.5493 ), Vector3( -3.88002, 1.21711, 40.3876 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spatial/RussianMafiaLeader:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 4, 5, 6, 7, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -107.905, 0 ), Vector3( 5.42335, -107.09, 17.0885 ), Vector3( 0, -107.905, 0 ), Vector3( 5.42335, -107.09, 17.0885 ), Vector3( 0, -107.905, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Spatial/RussianMafiaLeader:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 9, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -5.02893, -0.0844727, 42.6589 ), Vector3( -5.02893, 11.1328, 42.6589 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HUD:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 10.1, 10.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=39]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spatial/Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 30.9558 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spatial/RussianMafiaLeader:transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Transform( -0.461159, 0, -1.42735, 0, 1.5, 0, 1.42735, 0, -0.461159, -5.02893, -0.084473, 42.6589 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Spatial/RussianMafiaLeader:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -107.905, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Spatial/RussianMafiaLeader:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -5.02893, -0.0844727, 42.6589 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HUD:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[node name="Game" type="Node"]
+script = ExtResource( 4 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+script = SubResource( 33 )
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="Spatial"]
+transform = Transform( -0.959761, 0, 0.280818, 0, 1, 0, -0.280818, 0, -0.959761, 0, 0, 30.9558 )
+current = true
+
+[node name="city" type="MeshInstance" parent="Spatial"]
+mesh = ExtResource( 39 )
+material/0 = SubResource( 3 )
+material/1 = SubResource( 4 )
+material/2 = SubResource( 4 )
+material/3 = SubResource( 4 )
+material/4 = SubResource( 4 )
+material/5 = SubResource( 4 )
+material/6 = SubResource( 5 )
+material/7 = SubResource( 5 )
+material/8 = SubResource( 6 )
+material/9 = SubResource( 7 )
+material/10 = SubResource( 6 )
+material/11 = SubResource( 6 )
+material/12 = SubResource( 6 )
+material/13 = SubResource( 7 )
+material/14 = SubResource( 7 )
+material/15 = SubResource( 7 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, -0.643496, 0.765449, 0, -0.765449, -0.643496, 0, 8.04692, 0 )
+light_color = Color( 1, 0.654902, 0, 1 )
+
+[node name="Spatial" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -2.42544, -0.282207, 39.4437 )
+
+[node name="WetFloorSign_01" parent="Spatial/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 3.25938, 0.123725, 3.16745 )
+
+[node name="multiband_radio" type="MeshInstance" parent="Spatial/Spatial"]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.0196998, 0.127453, 0.15424 )
+mesh = ExtResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="Non skelet" parent="Spatial/Spatial" instance=ExtResource( 21 )]
+transform = Transform( 11, 6.51658e-07, 3.23054e-07, -3.58412e-06, 0.0171041, 0.999963, 3.5536e-06, -1.99993, 0.00855205, 1.47953, 0.209198, -3.4925 )
+
+[node name="Spatial2" parent="Spatial" instance=ExtResource( 20 )]
+transform = Transform( -1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 4.05704, -0.712283, -9.27868 )
+
+[node name="RussianMafiaLeader" parent="Spatial" instance=ExtResource( 25 )]
+transform = Transform( -0.461159, 0, -1.42735, 0, 1.5, 0, 1.42735, 0, -0.461159, -5.02893, -0.0844727, 42.6589 )
+
+[node name="CashRegister_01" parent="Spatial" instance=ExtResource( 38 )]
+transform = Transform( 0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, -0.189449, 38.3848 )
+
+[node name="Spatial3" type="Spatial" parent="Spatial"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 6.24681, -0.097942, 1.31956 )
+
+[node name="Chassis" type="MeshInstance" parent="Spatial/Spatial3"]
+mesh = ExtResource( 29 )
+skeleton = NodePath("")
+material/0 = SubResource( 22 )
+material/1 = SubResource( 23 )
+
+[node name="Tracks" type="MeshInstance" parent="Spatial/Spatial3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0240579, 0.00225395, -0.1609 )
+mesh = ExtResource( 33 )
+skeleton = NodePath("")
+material/0 = SubResource( 24 )
+material/1 = SubResource( 25 )
+
+[node name="Hull" type="MeshInstance" parent="Spatial/Spatial3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01056, -0.0586, -0.1525 )
+mesh = ExtResource( 30 )
+skeleton = NodePath("")
+material/0 = SubResource( 26 )
+
+[node name="Turret" type="MeshInstance" parent="Spatial/Spatial3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.212294, -0.106445, -0.0287359 )
+mesh = ExtResource( 31 )
+skeleton = NodePath("")
+material/0 = SubResource( 27 )
+
+[node name="Gun" type="MeshInstance" parent="Spatial/Spatial3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217728, -0.134318, -0.049686 )
+mesh = ExtResource( 32 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="hitler_full" parent="Spatial" instance=ExtResource( 43 )]
+transform = Transform( -1.91535, 0, 0.57569, 0, 2, 0, -0.57569, 0, -1.91535, -5.18447, -0.177872, 43.0195 )
+
+[node name="HUD" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="HUD"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -410.0
+margin_top = -23.0
+margin_right = 410.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 40 )
+text = "Юнитеры виноваты что здесь нет контента"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "CutScene"
+anims/CutScene = SubResource( 38 )
+anims/RESET = SubResource( 39 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true

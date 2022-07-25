@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://intro.webm" type="VideoStream" id=1]
+[ext_resource path="res://Intro.gd" type="Script" id=2]
+[ext_resource path="res://sanek-regular-141656.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 3 )
+
+[node name="Intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 1 )
+volume_db = 10.0
+autoplay = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+margin_right = 4.0
+margin_bottom = 14.0
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -179.0
+margin_top = -83.0
+custom_fonts/font = SubResource( 1 )
+disabled = true
+text = "Загрузка..."
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

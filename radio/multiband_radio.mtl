@@ -1,0 +1,4 @@
+newmtl Model001_Material001
+map_Kd radio_sheet.png
+map_bump bumpmap_flat.png
+

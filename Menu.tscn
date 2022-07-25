@@ -1,0 +1,621 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://lauter_waterfall.jpg" type="Texture" id=1]
+[ext_resource path="res://jenya/Jenya.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Menu.gd" type="Script" id=3]
+[ext_resource path="res://Hard Bass.ogg" type="AudioStream" id=4]
+[ext_resource path="res://ussr-stencil-regular.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://sanek-regular-141656.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://hitler/hitler_full.tscn" type="PackedScene" id=8]
+[ext_resource path="res://elprimo/el_primo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Polnareff/Polnareff.tscn" type="PackedScene" id=10]
+
+[sub_resource type="CylinderMesh" id=25]
+radial_segments = 8
+rings = 0
+
+[sub_resource type="SphereMesh" id=26]
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SpatialMaterial" id=27]
+flags_vertex_lighting = true
+
+[sub_resource type="Animation" id=28]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -27.886 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.344549, 0.515751, -1.18183 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "anim"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -27.886 ), Vector3( 0, 0, 31.299 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.344549, 0.515751, -1.18183 ), Vector3( 0.211775, 0.515751, -1.18183 ), Vector3( -5.96046e-08, 0.515751, -1.18183 ), Vector3( 0, 0.515751, -1.18183 ) ]
+}
+
+[sub_resource type="PanoramaSky" id=1]
+radiance_size = 0
+panorama = ExtResource( 1 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_custom_fov = 100.0
+ambient_light_sky_contribution = 0.0
+adjustment_contrast = 1.1
+adjustment_saturation = 2.0
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Button
+
+func _pressed():
+	get_tree().quit()
+"
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=7]
+default_font = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 32
+font_data = ExtResource( 6 )
+
+[sub_resource type="GDScript" id=12]
+script/source = "extends Button
+
+func _pressed():
+	get_tree().change_scene(\"res://jenya/GameMultiplayer.tscn\")
+"
+
+[sub_resource type="DynamicFont" id=13]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=14]
+default_font = SubResource( 13 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 32
+font_data = ExtResource( 6 )
+
+[sub_resource type="GDScript" id=17]
+script/source = "extends CheckButton
+
+func _ready():
+	if g.shadows:
+		pressed = true
+
+func _process(_delta) -> void:
+	if pressed:
+		g.shadows = true
+	if !pressed:
+		g.shadows = false
+"
+
+[sub_resource type="GDScript" id=18]
+script/source = "extends CheckButton
+
+func _ready():
+	if get_viewport().fxaa == true:
+		pressed = true
+
+func _process(_delta) -> void:
+	if pressed:
+		get_viewport().fxaa = true
+	if !pressed:
+		get_viewport().fxaa = false
+"
+
+[sub_resource type="GDScript" id=19]
+script/source = "extends CheckButton
+
+func _process(_delta) -> void:
+	if pressed:
+		g.optimization = true
+		#ProjectSettings.set_setting(\"rendering/quality/shading/force_vertex_shading\",true)
+		#ProjectSettings.set_setting(\"rendering/quality/shading/force_lambert_over_burley\",true)
+		#ProjectSettings.set_setting(\"rendering/quality/shading/force_blinn_over_ggx\",true)
+		#ProjectSettings.set_setting(\"display/window/stretch/mode\", PoolStringArray([\"viewport\"]))
+	if !pressed:
+		g.optimization = false
+		#ProjectSettings.set_setting(\"rendering/quality/shading/force_vertex_shading\",false)
+		#ProjectSettings.set_setting(\"rendering/quality/shading/force_lambert_over_burley\",false)
+		#ProjectSettings.set_setting(\"rendering/quality/shading/force_blinn_over_ggx\",false)
+"
+
+[sub_resource type="GDScript" id=20]
+script/source = "extends OptionButton
+
+func _process(_delta) -> void:
+	if selected == 0:
+		ProjectSettings.set_setting(\"physics/3d/physics_engine\",\"DEFAULT\")
+	if selected == 1:
+		ProjectSettings.set_setting(\"physics/3d/physics_engine\",\"GodotPhysics\")
+"
+
+[sub_resource type="GDScript" id=21]
+script/source = "extends CheckButton
+
+func _process(_delta) -> void:
+	if pressed:
+		g.mobile_buttons = true
+	if !pressed:
+		g.mobile_buttons = false
+"
+
+[sub_resource type="GDScript" id=22]
+script/source = "extends HSlider
+
+func _ready():
+	value = g.sensetivity
+
+func _process(_delta):
+	g.sensetivity = value
+"
+
+[sub_resource type="DynamicFont" id=23]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="GDScript" id=24]
+script/source = "extends Label
+
+func _process(_delta):
+	text = str(get_parent().value)
+"
+
+[node name="Menu" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="Spatial"]
+current = true
+
+[node name="Jenya" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 0.950059, 0, -0.31207, 0, 1, 0, 0.31207, 0, 0.950059, 0.688948, -1.04401, -1.53472 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 0.650284, 0.759691, 0, -0.759691, 0.650284, 0, 3.01863, 0 )
+
+[node name="hitler_full" parent="Spatial" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -0.723 )
+
+[node name="louchador_geo" parent="Spatial" instance=ExtResource( 9 )]
+transform = Transform( 5.85367, 0, -3.83856, 0, 7, 0, 3.83856, 0, 5.85367, 1.51608, -0.559486, -1.96773 )
+
+[node name="Polnareff" parent="Spatial" instance=ExtResource( 10 )]
+transform = Transform( 46.188, 0, 19.1487, 0, 50, 0, -19.1487, 0, 46.188, -0.473537, -0.574203, -1.09355 )
+
+[node name="SpotLight" type="SpotLight" parent="Spatial/Polnareff"]
+transform = Transform( -0.02, 0, -1.74845e-09, 0, 0.02, 0, 1.74845e-09, 0, -0.02, 0.0139465, 0, -0.03364 )
+light_energy = 2.0
+
+[node name="Spatial" type="Spatial" parent="Spatial"]
+transform = Transform( 0.88388, 0.467714, 0, -0.467714, 0.88388, 0, 0, 0, 1, -0.344549, 0.515751, -1.18183 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial/Spatial"]
+transform = Transform( 0.01, 0, 0, 0, 0.2, 0, 0, 0, 0.01, 0, 0.304758, 0 )
+mesh = SubResource( 25 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance2" type="MeshInstance" parent="Spatial/Spatial"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+mesh = SubResource( 26 )
+skeleton = NodePath("../MeshInstance")
+material/0 = SubResource( 27 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spatial/Spatial"]
+autoplay = "anim"
+playback_speed = 10.0
+anims/RESET = SubResource( 28 )
+anims/anim = SubResource( 29 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 86.0
+margin_top = -160.0
+margin_right = 304.0
+margin_bottom = -94.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+text = "Играть"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 86.0
+margin_top = -20.0
+margin_right = 304.0
+margin_bottom = 46.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+text = "Настройки"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 86.0
+margin_top = 120.0
+margin_right = 304.0
+margin_bottom = 186.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+text = "Выйти"
+script = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -155.5
+margin_right = 155.5
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 5 )
+text = "Ж.е.н.я 228"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control"]
+visible = false
+scale = Vector2( 0.365961, 0.185583 )
+normal = ExtResource( 7 )
+action = "debug"
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -200.0
+margin_right = 300.0
+margin_bottom = 200.0
+theme = SubResource( 7 )
+window_title = "Ирать"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Button" type="Button" parent="WindowDialog/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -62.0
+margin_top = -60.0
+margin_right = 62.0
+margin_bottom = -6.0
+custom_fonts/font = SubResource( 8 )
+text = "Одиночная"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="WindowDialog/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -62.0
+margin_top = 10.0
+margin_right = 62.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 9 )
+text = "Сетевая"
+
+[node name="Multiplayer" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -200.0
+margin_right = 300.0
+margin_bottom = 200.0
+theme = SubResource( 7 )
+window_title = "Сетевая"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Multiplayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Control" type="Control" parent="Multiplayer/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Server" type="Button" parent="Multiplayer/Control/Control"]
+anchor_right = 1.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 10 )
+text = "Создать"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Client" type="Button" parent="Multiplayer/Control/Control"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -27.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 10 )
+text = "Подключиться"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="Multiplayer/Control/Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -58.0
+custom_fonts/font = SubResource( 10 )
+text = "192.168.43.1"
+max_length = 20
+placeholder_text = "IP"
+
+[node name="Button" type="Button" parent="Multiplayer/Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -82.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 11 )
+text = "осмотр"
+script = SubResource( 12 )
+
+[node name="Settings" type="AcceptDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -200.0
+margin_right = 300.0
+margin_bottom = 200.0
+theme = SubResource( 7 )
+window_title = "Насрайки"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -44.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="MenuButton" parent="Settings/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.0
+margin_top = -33.0
+margin_right = 36.0
+margin_bottom = 33.0
+theme = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
+enabled_focus_mode = 0
+text = "MSAA"
+items = [ "Disabled", null, 0, false, false, 0, 0, null, "", false, "2X", null, 0, false, false, 1, 0, null, "", false, "4X", null, 0, false, false, 2, 0, null, "", false, "8X", null, 0, false, false, 3, 0, null, "", false, "16X", null, 0, false, false, 4, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="Settings/Control"]
+margin_right = 76.0
+margin_bottom = 40.0
+focus_mode = 0
+custom_fonts/font = SubResource( 16 )
+enabled_focus_mode = 0
+text = "Тени"
+script = SubResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton2" type="CheckButton" parent="Settings/Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -59.0
+margin_right = 59.0
+margin_bottom = 47.0
+focus_mode = 0
+custom_fonts/font = SubResource( 16 )
+enabled_focus_mode = 0
+text = "FXAA"
+script = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton3" type="CheckButton" parent="Settings/Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -187.0
+margin_bottom = 47.0
+focus_mode = 0
+custom_fonts/font = SubResource( 16 )
+enabled_focus_mode = 0
+text = "Оптимизация"
+script = SubResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton" type="OptionButton" parent="Settings/Control"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = -22.5
+margin_bottom = 22.5
+custom_fonts/font = SubResource( 16 )
+text = "DEFAULT"
+items = [ "DEFAULT", null, false, 0, null, "Alternative", null, false, 1, null ]
+selected = 0
+script = SubResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton4" type="CheckButton" parent="Settings/Control"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -232.0
+margin_top = -23.5
+margin_bottom = 23.5
+custom_fonts/font = SubResource( 16 )
+pressed = true
+text = "Мобильные кнопки"
+script = SubResource( 21 )
+
+[node name="HSlider" type="HSlider" parent="Settings/Control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -8.0
+margin_right = 169.0
+margin_bottom = 8.0
+value = 10.0
+script = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Control/HSlider"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -24.0
+margin_right = 51.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 23 )
+script = SubResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="Multiplayer/Control/Control/Server" to="." method="_on_Server_pressed"]
+[connection signal="pressed" from="Multiplayer/Control/Control/Client" to="." method="_on_Client_pressed"]

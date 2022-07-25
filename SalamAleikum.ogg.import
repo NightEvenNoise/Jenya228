@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SalamAleikum.ogg-1cc5115b7399d81a118e03bfc5cceb82.oggstr"
+
+[deps]
+
+source_file="res://SalamAleikum.ogg"
+dest_files=[ "res://.import/SalamAleikum.ogg-1cc5115b7399d81a118e03bfc5cceb82.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

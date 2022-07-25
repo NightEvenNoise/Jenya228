@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Boney M. - Rasputin.ogg-e38413b4961b89b213e320dbf72b3b20.oggstr"
+
+[deps]
+
+source_file="res://Boney M. - Rasputin.ogg"
+dest_files=[ "res://.import/Boney M. - Rasputin.ogg-e38413b4961b89b213e320dbf72b3b20.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

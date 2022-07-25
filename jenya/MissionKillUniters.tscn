@@ -1,0 +1,235 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://ashalai.ogg" type="AudioStream" id=1]
+[ext_resource path="res://jenya/Jenya.tscn" type="PackedScene" id=2]
+[ext_resource path="res://jenya/Jenya1.gd" type="Script" id=3]
+[ext_resource path="res://textures/olddoski.jpg" type="Texture" id=4]
+[ext_resource path="res://jenya/MissionKillUniters.gd" type="Script" id=5]
+[ext_resource path="res://buttons/up.png" type="Texture" id=6]
+[ext_resource path="res://buttons/cross.png" type="Texture" id=7]
+[ext_resource path="res://buttons/uparrow.png" type="Texture" id=8]
+[ext_resource path="res://buttons/5Star.png" type="Texture" id=9]
+[ext_resource path="res://buttons/sstar.png" type="Texture" id=10]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.418282
+height = 0.67813
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 5, 1, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=9]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 5.94487, 2.10277, 0.217409 )
+
+[node name="MissionKillUniters" type="Node"]
+script = ExtResource( 5 )
+
+[node name="3D" type="Spatial" parent="."]
+
+[node name="Jenya228" type="KinematicBody" parent="3D"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.133981, 0 )
+script = ExtResource( 3 )
+
+[node name="Jenya" parent="3D/Jenya228" instance=ExtResource( 2 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="3D/Jenya228"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.75508, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="3D"]
+transform = Transform( 0.227124, 0, 0, 0, 2.15428, 0, 0, 0, 19.9114, -5.84661, 2.00786, 11.9806 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 10 )
+
+[node name="StaticBody" type="StaticBody" parent="3D/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="3D/MeshInstance/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="3D"]
+transform = Transform( 0.227124, 0, 0, 0, 2.15428, 0, 0, 0, 23.3644, 6.26226, 2.00786, 11.9249 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 10 )
+
+[node name="StaticBody" type="StaticBody" parent="3D/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="3D/MeshInstance2/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="3D"]
+transform = Transform( 0.0261679, 0, -6.81891, 0, 2.15428, 0, 0.226232, 0, 0.465315, 0.639964, 2.00786, -4.46195 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 11 )
+
+[node name="StaticBody" type="StaticBody" parent="3D/MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="3D/MeshInstance3/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="3D"]
+transform = Transform( -0.0186053, 0, -6.77815, 0, 2.15428, 0, 0.22698, 0, -0.877951, 0.639964, 2.00786, 31.7994 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 11 )
+
+[node name="StaticBody" type="StaticBody" parent="3D/MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="3D/MeshInstance4/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="3D"]
+transform = Transform( 6.77826, 0, 0, 0, 0.0642495, 0, 0, 0, 18.4138, 0, 0, 13.7868 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="3D/MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="3D/MeshInstance5/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="3D"]
+transform = Transform( 6.77826, 0, 0, 0, 0.0642495, 0, 0, 0, 18.4138, 0, 4.03856, 13.7868 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="3D/MeshInstance6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="3D/MeshInstance6/StaticBody"]
+shape = SubResource( 9 )
+
+[node name="Camera" type="Camera" parent="3D"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20819, 2.21942, 13.6412 )
+
+[node name="ChangeScene" type="Area" parent="3D"]
+transform = Transform( 0.996004, 0, -0.0893115, 0, 1, 0, 0.0893115, 0, 0.996004, 0.188597, 2.12694, 29.2369 )
+
+[node name="CollisionShape" type="CollisionShape" parent="3D/ChangeScene"]
+shape = SubResource( 13 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = 15.0
+autoplay = true
+
+[node name="ControlAndroid" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left" type="Control" parent="ControlAndroid"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ControlAndroid/left"]
+position = Vector2( 130.108, -210.718 )
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 6 )
+action = "ui_up"
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="ControlAndroid/left"]
+position = Vector2( 230.517, 36.7692 )
+rotation = 3.14159
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 6 )
+action = "ui_down"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="ControlAndroid/left"]
+position = Vector2( 18.3848, 9.8996 )
+rotation = -1.5708
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 6 )
+action = "ui_left"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="ControlAndroid/left"]
+position = Vector2( 337.997, -93.3381 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 6 )
+action = "ui_right"
+
+[node name="right" type="Control" parent="ControlAndroid"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ControlAndroid/right"]
+position = Vector2( -124.451, -103.238 )
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 6 )
+action = "ui_shift"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="ControlAndroid/right"]
+position = Vector2( -306.884, -120.208 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 9 )
+action = "ui_attack"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="ControlAndroid/right"]
+position = Vector2( -138.593, -274.357 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 8 )
+action = "ui_jump"
+
+[node name="rightup" type="Control" parent="ControlAndroid"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 40.0
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="ControlAndroid/rightup"]
+position = Vector2( -96.1665, 8.45689 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 10 )
+action = "cam_chng"
+
+[node name="leftup" type="Control" parent="ControlAndroid"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ControlAndroid/leftup"]
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 7 )
+action = "ui_cancel"
+
+[connection signal="body_entered" from="3D/ChangeScene" to="." method="_on_ChangeScene_body_entered"]

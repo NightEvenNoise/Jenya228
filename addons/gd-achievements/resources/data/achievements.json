@@ -1,0 +1,16 @@
+{
+    "MyAchievement1": {
+        "description": "Pyaterka!",
+        "is_secret": 0,
+        "progress": 0,
+        "icon_path": "res://icon.png",
+        "is_have": 0
+    },
+    "MyAchievement2": {
+        "description": "Pyaterka!",
+        "is_secret": 0,
+        "progress": 0,
+        "icon_path": "res://icon.png",
+        "is_have": 0
+    }
+}

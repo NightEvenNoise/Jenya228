@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ashalai.ogg-acf04e7e1052d3498eff25fee9d680eb.oggstr"
+
+[deps]
+
+source_file="res://ashalai.ogg"
+dest_files=[ "res://.import/ashalai.ogg-acf04e7e1052d3498eff25fee9d680eb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

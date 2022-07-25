@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/imgitlervampizdec.ogg-d2d3e7704dea15982ca5e3950afc0aef.oggstr"
+
+[deps]
+
+source_file="res://hitler/imgitlervampizdec.ogg"
+dest_files=[ "res://.import/imgitlervampizdec.ogg-d2d3e7704dea15982ca5e3950afc0aef.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

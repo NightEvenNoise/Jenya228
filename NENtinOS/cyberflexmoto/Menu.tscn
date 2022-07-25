@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://NENtinOS/cyberflexmoto/audio/twodaysound-motion.ogg" type="AudioStream" id=1]
+[ext_resource path="res://NENtinOS/cyberflexmoto/assets/Flex_pck-0000000006.png" type="Texture" id=2]
+[ext_resource path="res://NENtinOS/cyberflexmoto/assets/Flex_pck-0000000003.png" type="Texture" id=3]
+[ext_resource path="res://NENtinOS/cyberflexmoto/fonts/rockinsoda-regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://NENtinOS/cyberflexmoto/Menu.gd" type="Script" id=5]
+[ext_resource path="res://NENtinOS/cyberflexmoto/assets/part_immeubles-bg.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Button
+
+func _pressed():
+	get_tree().call_deferred(\"change_scene\",\"res://NENtinOS/Main.tscn\")"
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -11.0
+margin_right = 132.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 1 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = 100.0
+margin_right = 132.0
+margin_bottom = 147.0
+custom_fonts/font = SubResource( 1 )
+text = "Exit"
+script = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+
+[node name="Flex_pck-0000000003" type="Sprite" parent="Control"]
+position = Vector2( -115.701, -111.783 )
+texture = ExtResource( 3 )
+
+[node name="Flex_pck-0000000006" type="Sprite" parent="Control/Flex_pck-0000000003"]
+position = Vector2( -76.4136, 62.9289 )
+texture = ExtResource( 2 )
+
+[node name="Flex_pck-0000000006" type="Sprite" parent="Control/Flex_pck-0000000003/Flex_pck-0000000006"]
+position = Vector2( 166.312, -11.9864 )
+texture = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

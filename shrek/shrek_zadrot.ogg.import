@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/shrek_zadrot.ogg-74267a1a97f248104f3dd784492b675b.oggstr"
+
+[deps]
+
+source_file="res://shrek/shrek_zadrot.ogg"
+dest_files=[ "res://.import/shrek_zadrot.ogg-74267a1a97f248104f3dd784492b675b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

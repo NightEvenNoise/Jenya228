@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://NENtinOS/NotoSans-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://NENtinOS/zantroke-regular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://NENtinOS/Hello user.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 4
+outline_color = Color( 0.513726, 0.027451, 0.956863, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+outline_size = 10
+outline_color = Color( 0.0313726, 0.435294, 0.556863, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="Hello user" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="color_rect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0772705, 0.736686, 0.824219, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -326.5
+margin_right = 326.5
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.905882, 0.917647, 0.368627, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Иди нахуй пользователь!"
+
+[node name="password" type="LineEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -25.0
+margin_right = 200.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
+secret = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -202.0
+margin_top = -70.0
+margin_right = -80.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 3 )
+text = "пароль"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -175.0
+margin_top = -79.0
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "готов"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
